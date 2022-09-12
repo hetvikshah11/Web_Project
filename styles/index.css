@@ -60,7 +60,7 @@ nav ul li {
     background-color: #0096c7;
     width: 10%;
     font-size: 15.4px;
-    font-weight:bold;
+    font-weight: bold;
     text-align: center;
     padding: 10px;
     margin-right: 10px;
@@ -82,7 +82,7 @@ nav ul li:hover {
 }
 
 .about {
-    background-image: linear-gradient(to bottom right,#0077b6,#90e0ef,#0077b6);
+    background-image: linear-gradient(to bottom right, #0077b6, #90e0ef, #0077b6);
     width: 100%;
     height: 350px;
     border-radius: 10px;
@@ -99,7 +99,7 @@ nav ul li:hover {
     justify-content: space-between;
 }
 
-.content{
+.content {
     justify-content: flex-start;
     background-color: #ffb703;
     border-radius: 10px;
@@ -108,13 +108,13 @@ nav ul li:hover {
     display: flex;
     justify-content: center;
     text-align: justify;
-    height:90px;
-    overflow:hidden;
+    height: 90px;
+    overflow: hidden;
     transition: height 3s;
-    
+
 }
 
-.content:hover{
+.content:hover {
     height: auto;
 }
 
@@ -135,7 +135,7 @@ nav ul li:hover {
 .m1 {
     font-size: 35px;
     border-radius: 50%;
-    background-image: linear-gradient(#03045e,#0096c7);
+    background-image: linear-gradient(#03045e, #0096c7);
     color: white;
     display: flex;
     flex-direction: column;
@@ -146,7 +146,7 @@ nav ul li:hover {
     height: 150px;
 }
 
-.login_page{
+.login_page {
     display: none;
     grid-template-columns: 1fr 1fr;
     border-radius: 20px;
@@ -155,8 +155,9 @@ nav ul li:hover {
     left: 135px;
     width: 80%;
     height: 80%;
-    
+
 }
+
 .left_grid {
     background: url(../Images/login_img.jpg);
     background-size: cover;
@@ -169,7 +170,7 @@ nav ul li:hover {
     flex-direction: column;
     justify-content: space-evenly;
     background-color: white;
-    border-radius:0 20px 20px 0;
+    border-radius: 0 20px 20px 0;
 
 }
 
@@ -225,26 +226,27 @@ h1 {
     line-height: 2;
 }
 
-span{
-    
+span {
+
     text-align: center;
     font-size: large;
 }
-span a{
+
+span a {
     text-decoration: none;
-   color: #0077B6;
+    color: #0077B6;
 }
 
-#cancel{
+#cancel {
     float: right;
 }
 
-.register_modal{
+.register_modal {
     display: none;
     justify-content: space-evenly;
     background-color: white;
     width: 80%;
-    height:90%;
+    height: 90%;
     border-radius: 20px;
     position: fixed;
     top: 15px;
@@ -253,7 +255,8 @@ span a{
     padding: 10px;
 
 }
-.left_register{
+
+.left_register {
     width: 50%;
     background: url("../images/manlaptop.jpg");
     background-size: cover;
@@ -261,7 +264,8 @@ span a{
     border-radius: 20px;
 
 }
-.register_page{
+
+.register_page {
     width: 50%;
     background-color: white;
     border-radius: 20px;
@@ -272,17 +276,27 @@ span a{
     width: max-content;
     padding: 20px 50px;
 }
-#fname,#lname,#password,#phone,#birthdate,#register_email,#register_password,#register_student,#register_teacher{
-    font-size:15px;
+
+#fname,
+#lname,
+#password,
+#phone,
+#birthdate,
+#register_email,
+#register_password,
+#register_student,
+#register_teacher {
+    font-size: 15px;
     margin-bottom: 15px;
     margin-top: 15px;
     font-weight: 500;
-    color:grey;
+    color: grey;
     border: none;
-    border-bottom:1px solid grey;
+    border-bottom: 1px solid grey;
     background: none;
 }
-.register_page label{
+
+.register_page label {
     /* background-color: #00B4D8; */
     font-weight: 600;
     /* padding: 10px; */
@@ -290,7 +304,8 @@ span a{
     font-size: large;
     /* margin: 5px; */
 }
-#register{
+
+#register {
     width: 100%;
     border: 0;
     background-color: #00B4D8;
@@ -299,7 +314,8 @@ span a{
     border-radius: 10px;
     font-size: large;
 }
-#cancel_register{
+
+#cancel_register {
     float: right;
 
 }
