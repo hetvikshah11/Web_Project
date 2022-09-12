@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" />
+</head>
+
+<body>
+    <div class="outer">
+        <div class="header">
+            <img src="images/logo.jpeg" width="200px" />
+            <h1>INTEGRATED STUDENT MANAGEMENT SYSTEM</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li>About</a></li>
+                <li>Student's Login</a></li>
+                <li>Teacher's Login</a></li>
+                <li id="login">Login</li>
+                <li id="Sign_up">Signup</a></li>
+            </ul>
+        </nav>
+
+        <div class="about">
+            <div class="leftabout">
+                <div class="content">
+                    This is an Integrated Student Management System can help the teacher
+                    as well as the students of several education institutions. Our main
+                    purpose is to provide an all-around environment that can be used by
+                    several institutions to stay connected
+                </div>
+                <div class="content">
+                    It provides a plausible atmostphere that can connect the Teachers
+                    and their respective Students. Whether it is the matter of keeping a
+                    track on the curriculum or on their attendance, this project is
+                    build to bring out the most
+                </div>
+            </div>
+            <div class="middleabout">
+                <div class="m1">
+                    <div>Salient</div>
+                    <div>Features</div>
+                </div>
+            </div>
+            <div class="rightabout">
+                <div class="content">
+                    The teachers are provided with a functionality to mark attendance
+                    and provides notes. Teachers also have the option to assign the
+                    homework as well as notify the students regarding some upcoming
+                    event or an extra lecture. Teachers can have a thorough information
+                    regarding the number of lectures attended by each student and also
+                    the option to assign grades
+                </div>
+                <div class="content">
+                    The students in return have the option to submit their assignment
+                    and also get the notifications that are sent out by the teachers, in
+                    addition to keep a track on their attendance and their grades. They
+                    have an access to the notes uploaded by the teachers and upload
+                    their own notes
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login_page">
+        <div class="left_grid"></div>
+        <div class="right_grid">
+            <div style="display: flex; justify-content: flex-end; margin-right: 20px">
+                <img src="./Images/cross.jpeg" id="cancel" width="25px" height="25px" alt="abc" />
+            </div>
+            <h1>SIGN IN</h1>
+            <div id="login_container">
+                <form>
+                    <label for="email" class="form_label"><b>Email</b></label><br />
+                    <input type="email" autocomplete="off" name="email" id="login_email"
+                        placeholder="Enter email" /><br />
+                    <label for="password" class="form_label"><b>Password</b></label><br />
+                    <input type="password" name="password" id="login_password"
+                        placeholder="Enter password" /><br /><br /><br />
+                    <button id="sign_in">SIGN IN</button>
+                    <br />
+                    <hr style="color: rgb(184, 170, 170)" />
+                </form>
+            </div>
+            <span>Don't have an Account? <a href="#">Sign Up</a></span>
+        </div>
+    </div>
+
+    <div class="register_modal">
+        <div class="left_register"></div>
+        <div class="register_page">
+            <div style="display: flex; align-self:flex-end; margin-right: 20px">
+                <img src="./Images/cross.jpeg" id="cancel_register" width="20px" height="20px" alt="abc">
+            </div>
+            <form method="post" type="submit">
+                <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                    <input type="radio" id="register_student" name="register_desig">
+                    <label for="register_student">Student</label>
+                    <input type="radio" id="register_teacher" name="register_desig">
+                    <label for="register_teacher">Teacher</label>
+                    <br>
+                </div>
+                <!-- <br><br> -->
+                <div>
+                    <label for="fname">First Name</label><br>
+                    <input name="fname" id="fname" placeholder="Enter First Name" /><br />
+                </div>
+                <div>
+                    <label for="lname">Last Name</label><br>
+                    <input name="lname" id="lname" placeholder="Enter Last Name" /><br />
+                </div>
+                <div>
+                    <label for="birthdate">Birth Date</label><br>
+                    <input type="date" id="birthdate" placeholder="dd/mm/yyyy" /><br />
+                </div>
+                <div>
+                    <label for="phone">Phone</label><br>
+                    <input type="tel" name="phone" id="phone" placeholder="Enter your phone" /><br />
+                </div>
+                <div>
+                    <label for="register_email">Email Id</label><br>
+                    <input type="text" id="register_email" name="register_email"
+                        placeholder="Enter your e-mail" /><br />
+                </div>
+                <div>
+                    <label for="register_password">Password</label><br>
+                    <input type="password" id="register_password" name="register_password"
+                        placeholder="Enter password" />
+                    <br />
+                </div>
+                <button type="submit" id="register">SignUp</button>
+            </form>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

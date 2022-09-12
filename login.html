@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="login_page">
+        <div class="left_grid">
+            <img src="./Images/login_img.jpg" width="100%">
+        </div>
+        <div class="right_grid">
+            <div style="display: flex; justify-content: flex-end; margin-right: 20px;">
+                <img src="./Images/cross.jpeg" id="cancel" width="20px" height="20px" alt="abc">
+            </div>
+            <h1>SIGN IN</h1>
+            <div id="login_container">
+                <form>
+                    <label for="email" class="form_label"><b>Email</b></label><br>
+                    <input type="email" autocomplete="off" name="email" id="email" placeholder="Enter email"><br>
+                    <label for="password" class="form_label"><b>Password</b></label><br>
+                    <input type="password" name="password" id="password" placeholder="Enter password"><br><br><br>
+                    <button id="sign_in">SIGN IN</button>
+                    <br>
+                    <hr style="color:rgb(184, 170, 170) ;">
+                </form>
+            </div>
+            <span>Don't have an Account? <a href="#">Sign Up</a></span>
+        </div>
+    </div>
+    <script src="./login.js"></script>
+</body>
+
+</html>
