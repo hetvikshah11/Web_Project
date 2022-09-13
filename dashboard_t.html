@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/dashboard_t.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 </head>
+
 <body>
-    
+    <div class="outer">
+        <div class="col1">
+            <img src="./images/logo.jpeg" id="logo" />
+            <!-- <br><br><br> -->
+            <div class="menu_items">
+                <h1>MENU</h1>
+                <div>
+                    <ion-icon class="main-nav-icon" name="trending-up-outline"></ion-icon>
+                    Dashboard
+                </div>
+                <div>
+                    <ion-icon class="main-nav-icon" name="checkbox-outline"></ion-icon>
+                    Attendance
+                </div>
+                <div>
+                    <ion-icon class="main-nav-icon" name="man-outline"></ion-icon>
+                    Student Profile
+                </div>
+                <div>
+                    <ion-icon class="main-nav-icon" name="easel-outline"></ion-icon>
+                    Lectures
+                </div>
+                <div>
+                    <ion-icon class="main-nav-icon" name="reader-outline"></ion-icon>
+                    Notes
+                </div>
+                <div>
+                    <ion-icon class="main-nav-icon" name="albums-outline"></ion-icon>
+                    Event
+                </div>
+            </div>
+        </div>
+        <div class="col2">
+            <h1 id="welcome">Hello abc</h1>
+            <h2>Welcome Back</h2>
+            <br /><br /><br />
+            <div class="teacher_col2_row">
+                <div class="teacher_progress">Progress</div>
+                <div class="teacher_progress"></div>
+            </div>
+        </div>
+        <div class="col3">
+            <div style="width: 100%">
+                <button id="student_logout">Logout</button>
+            </div>
+            <br /><br />
+            <div id="dp">abc</div>
+            <br /><br />
+            <h2>Name</h2>
+            <h3>BE-III CSE</h3>
+            <br /><br />
+            <h2>Notifications</h2>
+            <br /><br /><br />
+            <h2>Messages</h2>
+        </div>
+    </div>
 </body>
+
 </html>
