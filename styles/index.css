@@ -319,3 +319,9 @@ span a {
     float: right;
 
 }
+
+#login_signup{
+    cursor: pointer;
+    text-decoration: underline;
+    color:blue;
+}

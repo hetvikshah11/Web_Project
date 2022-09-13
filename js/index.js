@@ -14,3 +14,8 @@ document.getElementById('cancel_register').onclick = function () {
     document.getElementsByClassName('register_modal')[0].style.display = 'none'
     document.querySelector('.outer').style.opacity = '1'
 }
+document.getElementById('login_signup').onclick = function(){
+    document.getElementsByClassName('login_page')[0].style.display = 'none'
+    document.getElementsByClassName('register_modal')[0].style.display = 'flex'
+    document.querySelector('.outer').style.opacity = '0.2'
+}
