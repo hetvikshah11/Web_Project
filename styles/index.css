@@ -69,16 +69,13 @@ nav ul li {
     transition: 0.2s;
 }
 
-nav ul li a {
-    color: white;
-}
-
 a {
     text-decoration: none;
 }
 
 nav ul li:hover {
     background-color: #023E8A;
+    cursor: pointer;
 }
 
 .about {
@@ -100,18 +97,24 @@ nav ul li:hover {
 }
 
 .content {
-    justify-content: flex-start;
     background-color: #ffb703;
     border-radius: 10px;
     font-weight: bold;
-    padding: 10px;
     display: flex;
     justify-content: center;
     text-align: justify;
-    height: 90px;
+    height: 100px;
     overflow: hidden;
     transition: height 3s;
+}
 
+.contentp {
+    padding: 8px;
+}
+
+.contentimg {
+    width: 150px;
+    height: 100px;
 }
 
 .content:hover {
@@ -144,6 +147,10 @@ nav ul li:hover {
     justify-content: center;
     width: 200px;
     height: 150px;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .login_page {
@@ -241,6 +248,10 @@ span a {
     float: right;
 }
 
+#cancel:hover {
+    cursor: pointer;
+}
+
 .register_modal {
     display: none;
     justify-content: space-evenly;
@@ -250,7 +261,7 @@ span a {
     border-radius: 20px;
     position: fixed;
     top: 15px;
-    left: 100px;
+    left: 115px;
     overflow: auto;
     padding: 10px;
 
@@ -273,7 +284,6 @@ span a {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: max-content;
     padding: 20px 50px;
 }
 
@@ -297,12 +307,9 @@ span a {
 }
 
 .register_page label {
-    /* background-color: #00B4D8; */
     font-weight: 600;
-    /* padding: 10px; */
     border-radius: 10px;
     font-size: large;
-    /* margin: 5px; */
 }
 
 #register {
@@ -317,11 +324,14 @@ span a {
 
 #cancel_register {
     float: right;
-
 }
 
-#login_signup{
+#cancel_register:hover {
+    cursor: pointer;
+}
+
+#login_signup {
     cursor: pointer;
     text-decoration: underline;
-    color:blue;
+    color: blue;
 }

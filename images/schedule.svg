@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1154" height="432" viewBox="0 0 1154 432">
+  <g id="Group_18" data-name="Group 18" transform="translate(-357 -1405)">
+    <g id="Rectangle_12" data-name="Rectangle 12" transform="translate(357 1405)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="1154" height="432" rx="58" stroke="none"/>
+      <rect x="0.5" y="0.5" width="1153" height="431" rx="57.5" fill="none"/>
+    </g>
+    <rect id="Rectangle_13" data-name="Rectangle 13" width="13" height="93" rx="6.5" transform="translate(412 1431)" fill="#e82a2a"/>
+    <rect id="Rectangle_14" data-name="Rectangle 14" width="13" height="93" rx="6.5" transform="translate(412 1714)" fill="#2a4ae8"/>
+    <rect id="Rectangle_15" data-name="Rectangle 15" width="13" height="93" rx="6.5" transform="translate(412 1572)" fill="#34be6b"/>
+    <text id="Theory_of_Computation" data-name="Theory of Computation" transform="translate(452 1470)" fill="#49454e" font-size="30" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Theory of Computation</tspan></text>
+    <text id="Basics_of_Web_Programming" data-name="Basics of Web Programming" transform="translate(452 1611)" fill="#49454e" font-size="30" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Basics of Web Programming</tspan></text>
+    <text id="Computer_Organization" data-name="Computer Organization" transform="translate(452 1745)" fill="#49454e" font-size="30" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Computer Organization</tspan></text>
+    <text id="_11:00-12:00" data-name="11:00-12:00" transform="translate(452 1500)" fill="rgba(73,69,78,0.77)" font-size="20" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">11:00-12:00</tspan></text>
+    <text id="_12:00-1:00" data-name="12:00-1:00" transform="translate(452 1643)" fill="rgba(73,69,78,0.77)" font-size="20" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">12:00-1:00</tspan></text>
+    <text id="_1:00-2:00" data-name="1:00-2:00" transform="translate(452 1783)" fill="rgba(73,69,78,0.77)" font-size="20" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">1:00-2:00</tspan></text>
+    <text id="Introduction_to_NFA" data-name="Introduction to NFA" transform="translate(1246 1472)" fill="rgba(73,69,78,0.77)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Introduction to NFA</tspan></text>
+    <text id="Lecture" transform="translate(1389 1779)" fill="rgba(73,69,78,0.88)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Lecture</tspan></text>
+    <text id="LabWork_4.1" data-name="LabWork 4.1" transform="translate(1333 1642)" fill="rgba(73,69,78,0.88)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">LabWork 4.1</tspan></text>
+    <text id="Introduction_to_JavaScript" data-name="Introduction to JavaScript" transform="translate(1180 1606)" fill="rgba(73,69,78,0.77)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Introduction to JavaScript</tspan></text>
+    <text id="Introduction_to_Main_Memory" data-name="Introduction to Main Memory" transform="translate(1139 1743)" fill="rgba(73,69,78,0.77)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Introduction to Main Memory</tspan></text>
+    <line id="Line_1" data-name="Line 1" x2="1060.496" y2="1" transform="translate(410.5 1684.5)" fill="none" stroke="#27a556" stroke-width="1"/>
+    <line id="Line_2" data-name="Line 2" x2="1072.996" y2="2" transform="translate(412.5 1542.5)" fill="none" stroke="#ea3232" stroke-width="1"/>
+  </g>
+</svg>
