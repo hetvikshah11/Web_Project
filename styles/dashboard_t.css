@@ -3,6 +3,7 @@ body {
     padding: 10px;
     font-family: 'Arial';
 }
+
 .outer {
     background-color: #ADE8F4;
     width: 100%;
@@ -12,39 +13,45 @@ body {
     padding: 20px;
     display: flex;
 }
-.col1{
+
+.col1 {
     width: 20%;
     background-color: #CE4257;
     padding: 20px;
-    border-top-left-radius:20px;
-    border-bottom-left-radius:20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     color: white;
 }
-#logo{
+
+#logo {
     width: 100%;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgb(82, 80, 80);
 }
-.main-nav-icon{
+
+.main-nav-icon {
     margin-right: 10px;
 }
-.col2{
+
+.col2 {
     width: 60%;
     background-color: #FFD5C2;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.col3{
+
+.col3 {
     width: 20%;
     background-color: #9c36;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top-right-radius:20px;
-    border-bottom-right-radius:20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
-.menu_items{
+
+.menu_items {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -53,7 +60,8 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
-.menu_items div{
+
+.menu_items div {
     width: 80%;
     margin: 7px;
     display: flex;
@@ -62,7 +70,8 @@ body {
     border-radius: 20px;
     padding: 10px;
 }
-.col2_info{
+
+.col2_info {
     background-color: antiquewhite;
     padding: 10px;
     margin: 5px;
@@ -72,7 +81,7 @@ body {
     justify-content: left;
     border: 2px solid #023E8A;
 }
-#dp{
+#dp {
     width: 150px;
     height: 150px;
     display: flex;
@@ -80,8 +89,10 @@ body {
     justify-content: center;
     border: 2px solid black;
     border-radius: 50%;
+    overflow: hidden;
 }
-#student_logout{
+
+#student_logout {
     float: right;
     margin: 10px;
     /* font-size: large; */
@@ -91,18 +102,78 @@ body {
     padding-left: 10px;
     padding-right: 10px;
 }
-#student_logout:hover{
+
+#student_logout:hover {
     background-color: rgb(115, 8, 8);
 }
-.teacher_col2_row{
+
+.teacher_col2_row {
     display: flex;
     justify-content: space-evenly;
     width: 90%;
 }
-.teacher_progress{
+
+.teacher_progress {
     width: 35%;
     border-radius: 20px;
-    padding: 20px;
+    /* padding: 20px; */
     height: 150px;
     border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.circle-wrap {
+    width: 150px;
+    height: 150px;
+    background: #fefcff;
+    border-radius: 50%;
+    border: 1px solid #cdcbd0;
+}
+
+.circle-wrap .circle .mask, .circle .fill {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.mask .fill {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: #227ded;
+}
+
+.circle-wrap .circle .mask {
+    clip: rect(0px, 150px, 150px, 75px);
+}
+
+.mask.full,
+.circle .fill {
+    animation: fill ease-in-out 2s;
+    transform: rotate(100deg);
+}
+
+/* @keyframes fill {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(150deg);
+    }
+} */
+#profilepic{
+    /* display: none; */
+    position: relative;
+    z-index: 1;
+    
+}
+#dp input{
+    position: absolute;
+    display: block;
+    opacity: 0;
+    height: 150px;
+    width: 150px;
+    z-index: 2;
+    border-radius: 50%;
 }

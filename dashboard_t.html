@@ -48,8 +48,21 @@
             <h2>Welcome Back</h2>
             <br /><br /><br />
             <div class="teacher_col2_row">
-                <div class="teacher_progress">Progress</div>
-                <div class="teacher_progress"></div>
+                <div class="teacher_progress">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask half">
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="no_of_student teacher_progress">
+                    <div style="text-align:center ;">
+                        <h3><b>Number of Students</b></h3>
+                        <h1 id="students_count" style="color: #023E8A;"><b>100</b></h1>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col3">
@@ -57,7 +70,10 @@
                 <button id="student_logout">Logout</button>
             </div>
             <br /><br />
-            <div id="dp">abc</div>
+            <div id="dp">
+                <img id="profilepic" src="./images/dp.jpg" width="100%" height="100%">
+                <input type="file" id="filechooser" onchange="change()">
+            </div>
             <br /><br />
             <h2>Name</h2>
             <h3>BE-III CSE</h3>
@@ -67,6 +83,7 @@
             <h2>Messages</h2>
         </div>
     </div>
+    <script src="./js/dashboard_t.js"></script>
 </body>
 
 </html>
