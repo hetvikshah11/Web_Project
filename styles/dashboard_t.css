@@ -2,6 +2,7 @@ body {
     background-color: #023E8A;
     padding: 10px;
     font-family: 'Arial';
+    box-sizing: border-box;
 }
 
 .outer {
@@ -106,7 +107,22 @@ body {
 #student_logout:hover {
     background-color: rgb(115, 8, 8);
 }
-
+.circle{
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    border-radius: 50%;
+}
+.chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient( yellow 0deg 270deg, grey 270deg 360deg );
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+}
 .teacher_col2_row {
     display: flex;
     justify-content: space-evenly;
@@ -117,6 +133,7 @@ body {
     width: 35%;
     border-radius: 20px;
     /* padding: 20px; */
+    align-items: center;
     height: 150px;
     border: 1px solid black;
     display: flex;
