@@ -8,7 +8,6 @@ function change() {
         img.style.width = '150px'
         img.style.height = '150px'
         img.style.display = 'block'
-        // input.style.display = 'none'
     }
 }
 document.getElementById('filechooser').onmouseover = function(){
