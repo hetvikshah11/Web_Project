@@ -2,6 +2,7 @@ body {
     background-color: #023E8A;
     padding: 10px;
     font-family: 'Arial';
+    box-sizing: border-box;
 }
 
 .outer {
@@ -16,7 +17,7 @@ body {
 
 .col1 {
     width: 20%;
-    background-color: #4c6ef5;
+    background-color: #5c7cfa;
     padding: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -44,10 +45,11 @@ body {
 
 .col2-header{
     margin:10px 20px;
-    display:block;
     width:90%;
-    background-color: blue;
     border-radius:15px;
+    border: 2px solid #5c7cfa;
+    padding-left: 10px;
+    color: #3452cd;
 }
 
 .col3 {
@@ -109,12 +111,13 @@ body {
     border-radius: 20px;
     background-color: red;
     color: white;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    padding: 5px 10px;
 }
 
 #student_logout:hover {
-    background-color: rgb(115, 8, 8);
+    background-color: rgb(162, 7, 7);
 }
 
 .teacher_col2_row {
@@ -136,39 +139,7 @@ body {
     padding-left: 40px;
 }
 
-.circle-wrap {
-    width: 150px;
-    height: 150px;
-    background: #fefcff;
-    border-radius: 50%;
-    border: 1px solid #cdcbd0;
-}
-
-.circle-wrap .circle .mask,
-.circle .fill {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    border-radius: 50%;
-}
-
-.mask .fill {
-    clip: rect(0px, 75px, 150px, 0px);
-    background-color: #227ded;
-}
-
-.circle-wrap .circle .mask {
-    clip: rect(0px, 150px, 150px, 75px);
-}
-
-.mask.full,
-.circle .fill {
-    animation: fill ease-in-out 2s;
-    transform: rotate(100deg);
-}
-
 #profilepic {
-    /* display: none; */
     position: relative;
     z-index: 1;
 
@@ -208,7 +179,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: conic-gradient(#4c6ef5 0deg 270deg, lightgrey 270deg 360deg);
+    background: conic-gradient(#ff960d 0deg 270deg, lightgrey 270deg 360deg);
     border-radius: 50%;
     width: 80%;
     height: 80%;
