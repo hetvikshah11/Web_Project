@@ -36,7 +36,6 @@ body {
 
 .col2 {
     width: 60%;
-    /* background-color: #dbe4ff; */
     background-color: lightgray;
     display: flex;
     flex-direction: column;
@@ -90,7 +89,6 @@ body {
     margin: 7px;
     display: flex;
     font-size: 20px;
-    /* border: 2px solid ; */
     border-radius: 20px;
     padding: 10px;
 }
@@ -139,7 +137,6 @@ body {
 .teacher_progress {
     width: 35%;
     border-radius: 20px;
-    /* padding: 20px; */
     height: 150px;
     border: 1px solid black;
     display: flex;
@@ -203,6 +200,5 @@ body {
     cursor: pointer;
 }
 .active{
-    
     background-color:#364fc7;
 }
