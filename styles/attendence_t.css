@@ -202,6 +202,23 @@ body {
 .active{
     background-color:#364fc7;
 }
+table
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+tr,td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 2px 5px;
+}
+#save_div{
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    margin: 10px;
+}
 
 a{
     text-decoration: none;

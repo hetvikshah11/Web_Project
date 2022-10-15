@@ -75,3 +75,9 @@ body {
 .notes_content{
 
 }
+
+a{
+    text-decoration: none;
+    width: 100%;
+    color: white;
+}   
