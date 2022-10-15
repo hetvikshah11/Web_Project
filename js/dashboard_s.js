@@ -16,7 +16,3 @@ document.getElementById('filechooser').onmouseover = function(){
 document.getElementById('filechooser').onmouseout= function(){
     document.getElementById('blackfill').style.opacity = '0'
 }
-
-document.getElementById('teacher_logout').onclick = function(){
-    open('index.html','_self')
-}
