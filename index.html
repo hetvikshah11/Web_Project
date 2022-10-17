@@ -92,7 +92,7 @@
             </div>
             <h1>SIGN IN</h1>
             <div id="login_container">
-                <form>
+                <form action="/login" method="post" type="submit">
                     <label for="email" class="form_label"><b>Email</b></label><br />
                     <input type="email" autocomplete="off" name="email" id="login_email"
                         placeholder="Enter email" /><br />
@@ -114,7 +114,7 @@
             <div style="display: flex; align-self:flex-end; margin-right: 20px">
                 <img src="./Images/cross.jpeg" id="cancel_register" width="20px" height="20px" alt="abc">
             </div>
-            <form action="/" method="post" type="submit" >
+            <form action="/register" method="post" type="submit" >
                 <div style="display: flex; justify-content: space-evenly; align-items: center;">
                     <input type="radio" id="register_student" name="register_desig">
                     <label for="register_student">Student</label>
