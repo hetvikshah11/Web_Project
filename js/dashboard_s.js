@@ -1,3 +1,5 @@
+const connection=require('./database/connection');
+
 function change() {
     var input = document.getElementById("filechooser");
     var fReader = new FileReader();

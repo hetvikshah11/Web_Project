@@ -32,6 +32,18 @@ module.exports.createSchema=async()=>{
       Password:{
         type:String,
         required:true
+      },
+      Total_Lecture:{
+        type:Object
+      },
+      Lecture_Attended:{
+        type:Object
+      },
+      Img_url:{
+        type:String
+      },
+      Marks:{
+        type:Object
       }
 
     });
@@ -57,5 +69,16 @@ module.exports.showDbs=async()=>{
     let result=JSON.stringify(data);
     console.log(result);
     return result;
+
+}
+module.exports.login=async(email,password)=>{
+  let data=await Student.findOne({Email:email});
+  console.log(data["Password"]);
+  if(data["Password"]===password){
+    return true;
+  }
+  else{
+    return false;
+  }
 
 }
