@@ -73,12 +73,28 @@ module.exports.showDbs=async()=>{
 }
 module.exports.login=async(email,password)=>{
   let data=await Student.findOne({Email:email});
-  console.log(data["Password"]);
+  if(data)
+  {
+    console.log(data["Password"]);
   if(data["Password"]===password){
     return true;
   }
   else{
     return false;
   }
+  }
+  else{
+    return false;
+  }
 
+}
+module.exports.isStudentUnique = async function (email) {
+  let data = await Student.findOne({ email: email });
+  // console.log(data["email"])
+  if (data === null) {
+      return true;
+  }
+  else {
+      return false;
+  }
 }
