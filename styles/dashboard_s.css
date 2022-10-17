@@ -1,128 +1,18 @@
-body {
-    background-color: #023E8A;
-    padding: 10px;
-    font-family: 'Arial';
-}
-.outer {
-    background-color: #ADE8F4;
-    width: 100%;
-    box-sizing: border-box;
-    height: 100%;
-    border-radius: 30px;
-    padding: 20px;
-    display: flex;
-}
-.col1{
-    width: 20%;
-    background-color: #CE4257;
-    padding: 20px;
-    border-top-left-radius:20px;
-    border-bottom-left-radius:20px;
-    color: white;
-}
-#logo{
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(82, 80, 80);
-}
-.col2{
-    width: 60%;
-    background-color: #FFD5C2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.col3{
-    width: 20%;
-    background-color: #9c36;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top-right-radius:20px;
-    border-bottom-right-radius:20px;
-}
-.menu_items{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.menu_items div{
-    width: 80%;
-    margin: 7px;
-}
-.col2_info{
-    background-color: antiquewhite;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 20px;
-    width: 50%;
-    display: flex;
-    justify-content: left;
-    border: 2px solid #023E8A;
-}
-#dp{
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    border-radius: 50%;
-}
-#student_logout{
-    float: right;
-    margin: 10px;
-    /* font-size: large; */
-    border-radius: 20px;
-    background-color: red;
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-#student_logout:hover{
-    background-color: rgb(115, 8, 8);
+.col2 {
+  width: 60%;
+  background-color: #ffd5c2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#blackfill {
-    background-color: black;
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    opacity: 0;
-    z-index: 2;
-    border-radius: 50%;
-    display: flex;
-
-    color: black;
-}
-
-#dp input {
-    position: absolute;
-    display: block;
-    opacity: 0;
-    height: 150px;
-    width: 150px;
-    z-index: 3;
-    border-radius: 50%;
-}
-
-#dp {
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-a{
-    text-decoration: none;
-    width: 100%;
-    color: white;
+.col2_info {
+  background-color: antiquewhite;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 20px;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+  border: 2px solid #023e8a;
 }
