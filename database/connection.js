@@ -121,23 +121,21 @@ module.exports.showDbs = async () => {
   let result = JSON.stringify(data);
   console.log(result);
   return result;
-
 }
 
 module.exports.getStudentData = async (conditions) => {
-  const sdata = await Student.find(conditions);
-  // console.log(rdata)
-  const studentdata = JSON.stringify(rdata);
+  const sdata = await Student.findOne(conditions);
+  const studentdata = JSON.stringify(sdata);
   return studentdata;
 }
 
 module.exports.getTeacherData = async (conditions) => {
-  const tdata = await Teacher.find(conditions);
+  const tdata = await Teacher.findOne(conditions);
   const teacherdata = JSON.stringify(tdata);
   return teacherdata;
 }
 
-module.exports.login = async (email, password) => {
+module.exports.studentAvailable = async (email, password) => {
   let data = await Student.findOne({ Email: email });
   if (data) {
     console.log(data["Password"]);
@@ -152,9 +150,35 @@ module.exports.login = async (email, password) => {
     return false;
   }
 }
+
+module.exports.teacherAvailable = async (email, password) => {
+  let data = await Teacher.findOne({ Email: email });
+  if (data) {
+    console.log(data["Password"]);
+    if (data["Password"] === password) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  else {
+    return false;
+  }
+}
+
 module.exports.isStudentUnique = async function (email) {
   let data = await Student.findOne({ "Email": email });
-  // console.log(data["email"])
+  if (data === null) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+module.exports.isTeacherUnique = async function (email) {
+  let data = await Teacher.findOne({ "Email": email });
   if (data === null) {
     return true;
   }
