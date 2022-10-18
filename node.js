@@ -37,7 +37,6 @@ app.post('/register', async (req, res) => {
     else {
         res.send("User already exists")
     }
-
 })
 app.get('/dashboard_s', (req, res) => {
     res.sendFile(__dirname + "/dashboard_s.html");
@@ -56,21 +55,7 @@ app.post('/login', async (req, res) => {
     else {
         res.send("Incorrect email or password");
     }
-
-
-
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
 
