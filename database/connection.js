@@ -8,7 +8,7 @@ module.exports.createSchema = async () => {
   }).catch((err) => {
     console.log("Failed", err);
   });
-  const schema = new mongoose.Schema({
+  const student_schema = new mongoose.Schema({
     First_name: {
       type: String,
       required: true
@@ -47,9 +47,48 @@ module.exports.createSchema = async () => {
     }
 
   });
-  Student = mongoose.model('student', schema);
+  Student = mongoose.model('student', student_schema);
+
+  const teacher_schema = new mongoose.Schema({
+    First_name: {
+      type: String,
+      required: true
+    },
+    Last_name: {
+      type: String,
+      required: true
+    },
+    Birth_date: {
+      type: String,
+      required: true
+    },
+    Phone: {
+      type: String,
+      required: true
+    },
+    Email: {
+      type: String,
+      required: true
+    },
+    Password: {
+      type: String,
+      required: true
+    },
+    Total_Lecture: {
+      type: Number
+    },
+    Lecture_Conducted: {
+      type: Number
+    },
+    Img_url: {
+      type: String
+    },
+  });
+  Teacher = mongoose.model('Teacher',teacher_schema);
+
 }
-module.exports.insert = async (First_name, Last_name, Birth_date, Phone, Email, Password) => {
+
+module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, Email, Password) => {
 
   let data = new Student({
     First_name: First_name,
@@ -59,12 +98,25 @@ module.exports.insert = async (First_name, Last_name, Birth_date, Phone, Email, 
     Email: Email,
     Password: Password
   })
-  let result = data.save();
+  let result = await data.save();
   console.log(result);
 
 };
-module.exports.showDbs = async () => {
 
+module.exports.insertTeacher = async (First_name, Last_name, Birth_date, Phone, Email, Password) => {
+  let data = new Teacher({
+    First_name: First_name,
+    Last_name: Last_name,
+    Birth_date: Birth_date,
+    Phone: Phone,
+    Email: Email,
+    Password: Password
+  })
+  let result = await data.save()
+  console.log(result)
+}
+
+module.exports.showDbs = async () => {
   let data = await Student.find();
   let result = JSON.stringify(data);
   console.log(result);
@@ -72,11 +124,17 @@ module.exports.showDbs = async () => {
 
 }
 
-module.exports.getData = async (conditions) => {
-  const rdata = await Student.find(conditions);
+module.exports.getStudentData = async (conditions) => {
+  const sdata = await Student.find(conditions);
   // console.log(rdata)
-  const returndata = JSON.stringify(rdata);
-  return returndata;
+  const studentdata = JSON.stringify(rdata);
+  return studentdata;
+}
+
+module.exports.getTeacherData = async (conditions) => {
+  const tdata = await Teacher.find(conditions);
+  const teacherdata = JSON.stringify(tdata);
+  return teacherdata;
 }
 
 module.exports.login = async (email, password) => {
@@ -95,7 +153,7 @@ module.exports.login = async (email, password) => {
   }
 }
 module.exports.isStudentUnique = async function (email) {
-  let data = await Student.findOne({ email: email });
+  let data = await Student.findOne({ "Email": email });
   // console.log(data["email"])
   if (data === null) {
     return true;
