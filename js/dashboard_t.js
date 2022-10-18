@@ -20,7 +20,7 @@ document.getElementById('filechooser').onmouseout= function(){
 let rdata = null;
 rdata = JSON.parse(document.getElementById('received_data').innerHTML);
 console.log(rdata)
-document.getElementById('welcome').innerHTML = 'Welcome '+rdata[0].First_name;
+document.getElementById('welcome').innerHTML = 'Welcome '+rdata.First_name;
 
 document.getElementById('teacher_logout').onclick = function(){
     open('./views/index.html');
