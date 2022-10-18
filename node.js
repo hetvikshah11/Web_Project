@@ -43,9 +43,9 @@ app.post('/register', async (req, res) => {
         res.send("User already exists")
     }
 })
-app.get('/dashboard_s', (req, res) => {
-    res.sendFile(__dirname + "/dashboard_s.html");
-})
+// app.get('/dashboard_s', (req, res) => {
+//     res.sendFile(__dirname + "/dashboard_s.html");
+// })
 app.post('/login', async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
