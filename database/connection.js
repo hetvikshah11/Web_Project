@@ -72,12 +72,6 @@ module.exports.showDbs = async () => {
 
 }
 
-// async function getData(conditions){
-//   const rdata = await Student.find(conditions);
-//   console.log(rdata)
-//   return rdata
-// }
-// module.exports.getData = getData
 module.exports.getData = async (conditions) => {
   const rdata = await Student.find(conditions);
   // console.log(rdata)
