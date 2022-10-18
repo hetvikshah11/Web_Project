@@ -71,6 +71,20 @@ module.exports.showDbs = async () => {
   return result;
 
 }
+
+// async function getData(conditions){
+//   const rdata = await Student.find(conditions);
+//   console.log(rdata)
+//   return rdata
+// }
+// module.exports.getData = getData
+module.exports.getData = async (conditions) => {
+  const rdata = await Student.find(conditions);
+  // console.log(rdata)
+  const returndata = JSON.stringify(rdata);
+  return returndata;
+}
+
 module.exports.login = async (email, password) => {
   let data = await Student.findOne({ Email: email });
   if (data) {

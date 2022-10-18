@@ -70,7 +70,7 @@
         </div>
       </div>
       <div class="col2">
-        <h1 id="welcome">Hello abc</h1>
+        <h1 id="welcome">Hello <%= data[0].First_name%></h1>
         <h2>Welcome Back</h2>
         <br /><br /><br />
         <h2>Today's Lectures</h2>
@@ -102,6 +102,8 @@
         <h2>Messages</h2>
       </div>
     </div>
-    <script src="./js/dashboard_s.js"></script>
+    <script src="../js/dashboard_s.js">
+      export default "<%=  data %>" //this is the name of my object
+    </script>
   </body>
 </html>

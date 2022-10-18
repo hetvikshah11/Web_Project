@@ -1,5 +1,6 @@
-const connection=require('./database/connection');
-
+// const connection=require('./database/connection');
+// import {data} from "../views/dashboard_s.ejs"
+const data = require('../views/dashboard_s.ejs')
 function change() {
     var input = document.getElementById("filechooser");
     var fReader = new FileReader();
@@ -18,3 +19,6 @@ document.getElementById('filechooser').onmouseover = function(){
 document.getElementById('filechooser').onmouseout= function(){
     document.getElementById('blackfill').style.opacity = '0'
 }
+
+// let data1 = "<%- data %>"
+console.log(data)

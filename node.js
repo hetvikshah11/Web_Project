@@ -44,7 +44,10 @@ app.post('/login', async (req, res) => {
     console.log(email, password);
     const result = await connection.login(email, password);
     if (result) {
-        res.redirect('/dashboard_s')
+        console.log('function called')
+        const data = JSON.parse(await connection.getData({"Email":email,"Password":password}))
+        console.log(data)
+        res.render('dashboard_s.ejs',{data})
     }
     else {
         res.send("Incorrect email or password");
