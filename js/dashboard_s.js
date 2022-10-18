@@ -1,6 +1,3 @@
-// const connection=require('./database/connection');
-// import {data} from "../views/dashboard_s.ejs"
-const data = require('../views/dashboard_s.ejs')
 function change() {
     var input = document.getElementById("filechooser");
     var fReader = new FileReader();
@@ -20,5 +17,11 @@ document.getElementById('filechooser').onmouseout= function(){
     document.getElementById('blackfill').style.opacity = '0'
 }
 
-// let data1 = "<%- data %>"
-console.log(data)
+let rdata = null;
+rdata = JSON.parse(document.getElementById('received_data').innerHTML);
+// console.log(rdata[0].Last_name)
+document.getElementById('welcome').innerHTML = 'Welcome '+rdata[0].First_name;
+
+document.getElementById('student_logout').onclick = function(){
+    open('./views/index.html');
+}

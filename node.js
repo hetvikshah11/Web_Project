@@ -41,13 +41,13 @@ app.get('/dashboard_s', (req, res) => {
 app.post('/login', async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    console.log(email, password);
+    // console.log(email, password);
     const result = await connection.login(email, password);
     if (result) {
         console.log('function called')
-        const data = JSON.parse(await connection.getData({"Email":email,"Password":password}))
-        console.log(data)
-        res.render('dashboard_s.ejs',{data})
+        const data = await connection.getData({ "Email": email, "Password": password })
+        // console.log(data)
+        res.render('dashboard_s.ejs', { data })
     }
     else {
         res.send("Incorrect email or password");
