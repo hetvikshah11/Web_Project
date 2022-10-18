@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-
-
 const path = require('path');
 const connection = require('./database/connection');
 app.use(express.json())
@@ -33,11 +31,9 @@ app.post('/register', async (req, res) => {
         // console.log(result);
         res.send("Success");
     }
-    else
-    {
+    else {
         res.send("User already exists")
     }
-
 })
 app.get('/dashboard_s', (req, res) => {
     res.sendFile(__dirname + "/dashboard_s.html");
@@ -53,21 +49,7 @@ app.post('/login', async (req, res) => {
     else {
         res.send("Incorrect email or password");
     }
-
-
-
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
 
