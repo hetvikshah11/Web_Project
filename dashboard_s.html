@@ -83,16 +83,18 @@
           <button id="student_logout">Logout</button>
         </div>
         <br /><br />
-        <div id="dp">
-          <img
-            src="./images/camera.svg"
-            id="profilepic"
-            width="30px"
-            height="30px"
-          />
-          <div id="blackfill"></div>
-          <input type="file" id="filechooser" onchange="change()" />
-        </div>
+        <form action="/dp" method="post">
+          <div id="dp">
+            <img
+              src="./images/camera.svg"
+              id="profilepic"
+              width="30px"
+              height="30px"
+            />
+            <div id="blackfill"></div>
+            <input type="file" id="filechooser" onchange="change()" />
+          </div>
+        </form>
         <br /><br />
         <h2>Name</h2>
         <h3>BE-III CSE</h3>
@@ -102,6 +104,6 @@
         <h2>Messages</h2>
       </div>
     </div>
-    <script src="./js/dashboard_s.js"></script>
+    <script src="./js/dashboard_s.js" ></script>
   </body>
 </html>

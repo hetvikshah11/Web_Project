@@ -1,5 +1,7 @@
 const connection=require('./database/connection');
-
+const multer = require('multer');
+const storage = require('./cloudinary');
+const upload = multer({ storage: storage })
 function change() {
     var input = document.getElementById("filechooser");
     var fReader = new FileReader();

@@ -98,3 +98,9 @@ module.exports.isStudentUnique = async function (email) {
       return false;
   }
 }
+module.exports.StudentId = async (email) => {
+
+  let data=await Student.findOne({Email:email});
+  let result = JSON.stringify(data);
+  return result;
+}
