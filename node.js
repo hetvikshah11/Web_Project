@@ -45,6 +45,7 @@ app.get('/', (req, res) => {
 
 app.get('/dashboard_s', middleware, async (req, res) => {
     let data = await connection.getData(req.session.user_id);
+    data=JSON.parse(data);
     res.render("dashboard_s", { data });
 })
 app.post('/register', async (req, res) => {
@@ -80,7 +81,7 @@ app.post('/login', async (req, res) => {
         const result = JSON.parse(await connection.StudentId(email));
         req.session.user_id = result["_id"];
         console.log(req.session.user_id);
-        res.render('dashboard_s.ejs', { data })
+        res.render('dashboard_s', { data });
     }
     else {
         const tAvailable = await connection.teacherAvailable(email, password);

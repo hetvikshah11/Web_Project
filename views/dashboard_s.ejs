@@ -93,6 +93,51 @@
         <h2>Messages</h2>
       </div>
     </div>
+<<<<<<< HEAD
+    <div class="col2">
+      <h1 id="welcome">Hello <%=data.First_name%> </h1>
+      <h2>Welcome Back</h2>
+      <br /><br /><br />
+      <h2>Today's Lectures</h2>
+      <div class="col2_info">Theory Of computation</div>
+      <div class="col2_info">Basics of Web Programming</div>
+      <div class="col2_info">Computer Organisation</div>
+    </div>
+    <div class="col3">
+      <div style="width: 100%">
+        <form action="/logout" method="post">
+          <button id="student_logout" type="submit">logout</button>
+        </form>
+      </div>
+      <br /><br />
+      <form action="/prof_pic" method="post" enctype="multipart/form-data">
+          <div id="dp">
+          <img src="" alt="abc"  id="profilepic"  />
+        <div id="blackfill">
+        <input type="file" id="filechooser"  accept=".jpg,.jpeg,.png" name="img" width="100%" height=""/>
+      </div>
+      </div>
+        <button >Upload</button>
+        </form>
+      <br /><br />
+      <h2>Name</h2>
+      <h3>BE-III CSE</h3>
+      <br /><br />
+      <h2>Notifications</h2>
+      <br /><br /><br />
+      <h2>Messages</h2>
+    </div>
+  </div>
+ 
+  <p id="received_data" style="display:none;">
+    <%= data %>
+  </p>
+  <script src="../js/dashboard_s.js"></script>
+</body>
+
+</html>
+<!-- <%=data.Img_url%> -->
+=======
     <p id="received_data" style="display: none"><%= data1 %></p>
     <script src="../js/dashboard_s.js"></script>
     <script>
@@ -113,3 +158,4 @@
     </script>
   </body>
 </html>
+>>>>>>> main
