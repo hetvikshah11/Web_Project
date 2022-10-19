@@ -22,6 +22,3 @@ rdata = JSON.parse(document.getElementById('received_data').innerHTML);
 // console.log(rdata[0].Last_name)
 document.getElementById('welcome').innerHTML = 'Welcome '+rdata.First_name;
 
-document.getElementById('student_logout').onclick = function(){
-    open('./views/index.html');
-}

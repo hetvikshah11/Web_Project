@@ -186,3 +186,41 @@ module.exports.isTeacherUnique = async function (email) {
     return false;
   }
 }
+
+module.exports.StudentId = async (email) => {
+
+  let data=await Student.findOne({Email:email});
+  let result = JSON.stringify(data);
+  // console.log(result);
+  return result;
+}
+module.exports.TeacherId = async (email) => {
+
+  let data=await Teacher.findOne({Email:email});
+  let result = JSON.stringify(data);
+  // console.log(result);
+  return result;
+}
+
+module.exports.getData=async(id)=>{
+  let data=await Student.findOne({_id:id});
+  if(data==null)
+  {
+    data=await Teacher.findOne({_id:id});
+  }
+  let result=JSON.stringify(data);
+  return result;
+}
+
+module.exports.updateStudentProfPic=async(id,filepath)=>{
+  let data=await Student.updateOne({_id:id},{$set:{Img_url:filepath}});
+  // let data=await Student.findByIdAndUpadte(id,{Img_url:filepath});
+  if(data)
+  {
+    console.log('Success');
+
+  }
+  else{
+    console.log("Failure");
+  }
+}

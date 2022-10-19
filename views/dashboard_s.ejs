@@ -60,7 +60,7 @@
       </div>
     </div>
     <div class="col2">
-      <h1 id="welcome">Hello </h1>
+      <h1 id="welcome">Hello <%=data[0].First_name%> </h1>
       <h2>Welcome Back</h2>
       <br /><br /><br />
       <h2>Today's Lectures</h2>
@@ -70,14 +70,19 @@
     </div>
     <div class="col3">
       <div style="width: 100%">
-        <button id="student_logout">Logout</button>
+        <form action="/logout" method="post">
+          <button id="student_logout" type="submit">logout</button>
+        </form>
       </div>
       <br /><br />
       <div id="dp">
-        <img src="./images/camera.svg" id="profilepic" width="30px" height="30px" />
+        <form action="/prof_pic" method="post" enctype="multipart/form-data">
+          <img src="<%=data[0].Img_url%>" alt="abc"  id="profilepic" width="30px" height="30px" />
         <div id="blackfill"></div>
-        <input type="file" id="filechooser" onchange="change()" />
+        <input type="file" id="filechooser"  accept=".jpg,.jpeg,.png" name="img" />
       </div>
+        <button >Upload</button>
+        </form>
       <br /><br />
       <h2>Name</h2>
       <h3>BE-III CSE</h3>
@@ -87,8 +92,9 @@
       <h2>Messages</h2>
     </div>
   </div>
+  <img src="<%=data[0].Img_url%>" width="50px" height="50px">
   <p id="received_data" style="display:none;">
-    <%= data1 %>
+    <%= data %>
   </p>
   <script src="../js/dashboard_s.js"></script>
 </body>
