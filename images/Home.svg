@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="229" height="67" viewBox="0 0 229 67">
-  <g id="Group_2" data-name="Group 2" transform="translate(-640 -1194)">
-    <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(640 1194)" fill="#eee" stroke="#707070" stroke-width="1">
-      <rect width="229" height="67" rx="33.5" stroke="none"/>
-      <rect x="0.5" y="0.5" width="228" height="66" rx="33" fill="none"/>
-    </g>
-    <path id="home_FILL0_wght400_GRAD0_opsz48" d="M11,39h7.5V26.5h11V39H37V19.5L24,9.75,11,19.5Zm0,3a2.988,2.988,0,0,1-3-3V19.5a2.983,2.983,0,0,1,.325-1.35A2.847,2.847,0,0,1,9.2,17.1l13-9.75a2.978,2.978,0,0,1,3.6,0l13,9.75a2.847,2.847,0,0,1,.875,1.05A2.983,2.983,0,0,1,40,19.5V39a2.988,2.988,0,0,1-3,3H26.5V29.5h-5V42ZM24,24.35Z" transform="translate(662 1203.125)"/>
-    <text id="Home" transform="translate(727 1239)" fill="#494242" font-size="25" font-family="SansSerifBold, SansSerif">
-      <tspan x="0" y="0">Home</tspan>
-    </text>
-  </g>
-</svg>
+<svg fill="white" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="16" height="16"><path d="M 24.962891 1.0546875 A 1.0001 1.0001 0 0 0 24.384766 1.2636719 L 1.3847656 19.210938 A 1.0005659 1.0005659 0 0 0 2.6152344 20.789062 L 4 19.708984 L 4 46 A 1.0001 1.0001 0 0 0 5 47 L 18.832031 47 A 1.0001 1.0001 0 0 0 19.158203 47 L 30.832031 47 A 1.0001 1.0001 0 0 0 31.158203 47 L 45 47 A 1.0001 1.0001 0 0 0 46 46 L 46 19.708984 L 47.384766 20.789062 A 1.0005657 1.0005657 0 1 0 48.615234 19.210938 L 41 13.269531 L 41 6 L 35 6 L 35 8.5859375 L 25.615234 1.2636719 A 1.0001 1.0001 0 0 0 24.962891 1.0546875 z M 25 3.3222656 L 44 18.148438 L 44 45 L 32 45 L 32 26 L 18 26 L 18 45 L 6 45 L 6 18.148438 L 25 3.3222656 z M 37 8 L 39 8 L 39 11.708984 L 37 10.146484 L 37 8 z M 20 28 L 30 28 L 30 45 L 20 45 L 20 28 z"/></svg>

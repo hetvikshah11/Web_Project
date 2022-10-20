@@ -14,43 +14,28 @@
     <div class="outer">
         <div class="col1">
             <img src="../images/logo.jpeg" id="logo" />
-            <!-- <br><br><br> -->
+            <h1>MENU</h1>
             <div class="menu_items">
-                <h1>MENU</h1>
-                <div class="active">
-                    <ion-icon class="main-nav-icon" name="trending-up-outline"></ion-icon>
-                    Dashboard
+                <div>
+                    <ion-icon name="home-outline"></ion-icon> &nbsp
+                    Home
                 </div>
-                <a href="./attendence_t.html">
-                    <div>
-                        <ion-icon class="main-nav-icon" name="checkbox-outline"></ion-icon>
-                        Attendance
-                    </div>
-                </a>
-                <a href="./student_profile_t.html">
-                    <div>
-                        <ion-icon class="main-nav-icon" name="man-outline"></ion-icon>
-                        Student Profile
-                    </div>
-                </a>
-                <a href="./lecture_t.html">
-                    <div>
-                        <ion-icon class="main-nav-icon" name="easel-outline"></ion-icon>
-                        Lectures
-                    </div>
-                </a>
-                <a href="notes_t.html">
-                    <div>
-                        <ion-icon class="main-nav-icon" name="reader-outline"></ion-icon>
-                        Notes
-                    </div>
-                </a>
-                <a href="./event_t.html">
-                    <div>
-                        <ion-icon class="main-nav-icon" name="albums-outline"></ion-icon>
-                        Event
-                    </div>
-                </a>
+                <div>
+                    <ion-icon name="laptop-outline"></ion-icon> &nbsp
+                    Attendance
+                </div>
+                <div>
+                    <ion-icon name="reorder-four-outline"></ion-icon> &nbsp
+                    Notes
+                </div>
+                <div>
+                    <ion-icon name="newspaper-outline"></ion-icon> &nbsp
+                    Grades
+                </div>
+                <div>
+                    <ion-icon name="laptop-outline"></ion-icon> &nbsp
+                    Settings
+                </div>
             </div>
         </div>
         <div class="col2">
@@ -59,19 +44,11 @@
                 <h2>Welcome Back</h2>
             </div>
             <br /><br /><br />
-            <div class="teacher_col2_row">
-                <div class="teacher_progress">
-                    <div class="chart">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-                <div class="no_of_student teacher_progress">
-                    <div style="text-align:center ;">
-                        <h3><b>Number of Students</b></h3>
-                        <h1 id="students_count" style="color: #364fc7;"><b>100</b></h1>
-                    </div>
-                </div>
-            </div>
+            <div id="home_content">In home</div>
+            <div id="attendance_content">In attendance</div>
+            <div id="notes_content">In notes</div>
+            <div id="grades_content">In grades</div>
+            <div id="settings_content">In settings</div>
         </div>
         <div class="col3">
             <div>
@@ -95,7 +72,7 @@
         </div>
     </div>
     <p id="received_data" style="display:none;">
-        <%= data2 %>
+        <%= data %>
     </p>
     <script src="../js/dashboard_t.js"></script>
 </body>
