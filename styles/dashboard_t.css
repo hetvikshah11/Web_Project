@@ -23,6 +23,20 @@ body {
   border-bottom-left-radius: 20px;
   color: white;
 }
+.menu_items div:hover {
+  color: #364fc7;
+  background-color: #eee;
+  cursor: pointer;
+}
+.menu_items div.active {
+  background-color: #364fc7;
+  color: #eee;
+}
+.active {
+  background-color: #364fc7;
+  color: #eee;
+  border-radius: 30%;
+}
 
 #logo {
   width: 100%;
@@ -87,7 +101,7 @@ body {
   width: 80%;
   margin: 7px;
   display: flex;
-  font-size: 20px;
+  font-size: 24px;
   border-radius: 20px;
   padding: 10px;
 }
@@ -192,21 +206,9 @@ body {
   padding: 10px;
 }
 
-.col1 div div:hover {
-  color: #227ded;
-  background-color: white;
-  cursor: pointer;
-}
-.active {
-  background-color: #364fc7;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  width: 100%;
-}
-
-#grades_content,#attendance_content,#notes_content,#settings_content {
+#grades_content,
+#attendance_content,
+#notes_content,
+#settings_content {
   display: none;
 }
