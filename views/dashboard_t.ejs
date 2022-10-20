@@ -21,7 +21,7 @@
                     Home
                 </div>
                 <div id="attendance" onclick="menu_click()">
-                    <ion-icon name="laptop-outline"></ion-icon> &nbsp
+                    <ion-icon name="checkbox-outline"></ion-icon> &nbsp
                     Attendance
                 </div>
                 <div id="notes" onclick="menu_click()">
@@ -29,11 +29,11 @@
                     Notes
                 </div>
                 <div id="grades" onclick="menu_click()">
-                    <ion-icon name="newspaper-outline"></ion-icon> &nbsp
+                    <ion-icon name="school-outline"></ion-icon> &nbsp
                     Grades
                 </div>
                 <div id="settings" onclick="menu_click()">
-                    <ion-icon name="laptop-outline"></ion-icon> &nbsp
+                    <ion-icon name="settings-outline"></ion-icon> &nbsp
                     Settings
                 </div>
             </div>
@@ -58,21 +58,19 @@
                 <br /><br />
                 <form action="/teacher_pic" method="post" enctype="multipart/form-data">
                     <div id="dp">
-                      <img src="" alt="abc" id="profilepic" />
-                      <div id="blackfill">
-                        <input type="file" id="filechooser" accept=".jpg,.jpeg,.png" name="img" value="<%=data[" Img_url"]%>"/>
-                      </div>
+                        <img src="" alt="abc" id="profilepic" />
+                        <div id="blackfill">
+                            <input type="file" id="filechooser" accept=".jpg,.jpeg,.png" name="img" value="<%=data["
+                                Img_url"]%>"/>
+                        </div>
                     </div>
-            
-                    <button          type="submit" id="upload_pic">Upload</button>
-                  </form>
-                <br /><br />
-                <h2>Name</h2>
-                <h3>BE-III CSE</h3>
-                <br /><br />
-                <h2>Notifications</h2>
-                <br /><br /><br />
-                <h2>Messages</h2>
+                    <br /><br />
+                    <h2>Name</h2>
+                    <h3>BE-III CSE</h3>
+                    <br /><br />
+                    <h2>Notifications</h2>
+                    <br /><br /><br />
+                    <h2>Messages</h2>
             </div>
         </div>
     </div>

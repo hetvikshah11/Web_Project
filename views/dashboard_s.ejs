@@ -1,105 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/dashboard_s.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./styles/dashboard_s.css" />
-  <link rel="stylesheet" href="./styles/common_s.css" />
+    <script src="./js/menu_s.js"></script>
 
-  <script src="./js/menu_s.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </head>
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-</head>
+  <body>
+    <div class="outer">
+      <div class="col1">
+        <img src="./images/logo.jpeg" id="logo" />
+        <div class="menu_items">
+          <h1>MENU</h1>
+          <div onclick="menu_item()" id="home" class="active">
+            <ion-icon class="main-nav-icon" name="home-outline"></ion-icon>
+            Home
+          </div>
+          <div onclick="menu_item()" id="courses">
+            <ion-icon class="main-nav-icon" name="grid-outline"></ion-icon>
+            Courses
+          </div>
 
-<body>
-  <div class="outer">
-    <div class="col1">
-      <img src="./images/logo.jpeg" id="logo" />
-      <div class="menu_items">
-        <h1>MENU</h1>
-        <div onclick="menu_item()" id="home" class="active">
-          <ion-icon class="main-nav-icon" name="home-outline"></ion-icon>
-          Home
-        </div>
-        <div onclick="menu_item()" id="courses">
-          <ion-icon class="main-nav-icon" name="grid-outline"></ion-icon>
-          Courses
-        </div>
+          <div onclick="menu_item()" id="grades">
+            <ion-icon class="main-nav-icon" name="checkbox-outline"></ion-icon>
+            Grades
+          </div>
 
-        <div onclick="menu_item()" id="grades">
-          <ion-icon class="main-nav-icon" name="checkbox-outline"></ion-icon>
-          Grades
-        </div>
+          <div onclick="menu_item()" id="tasks">
+            <ion-icon class="main-nav-icon" name="easel-outline"></ion-icon>
+            My Tasks
+          </div>
 
-        <div onclick="menu_item()" id="tasks">
-          <ion-icon class="main-nav-icon" name="easel-outline"></ion-icon>
-          My Tasks
-        </div>
+          <div onclick="menu_item()" id="calender">
+            <ion-icon class="main-nav-icon" name="calendar-outline"></ion-icon>
+            Calender
+          </div>
 
-        <div onclick="menu_item()" id="calender">
-          <ion-icon class="main-nav-icon" name="calendar-outline"></ion-icon>
-          Calender
-        </div>
+          <div onclick="menu_item()" id="inbox">
+            <ion-icon class="main-nav-icon" name="albums-outline"></ion-icon>
+            Inbox
+          </div>
 
-        <div onclick="menu_item()" id="inbox">
-          <ion-icon class="main-nav-icon" name="albums-outline"></ion-icon>
-          Inbox
-        </div>
-
-        <div onclick="menu_item()" id="settings">
-          <ion-icon class="main-nav-icon" name="settings-outline"></ion-icon>
-          Settings
-        </div>
-      </div>
-    </div>
-
-    <div class="col2">
-      <h1 id="welcome">Hello</h1>
-      <h2>Welcome Back</h2>
-      <br /><br /><br />
-      <div id="home_content">In home</div>
-      <div id="courses_content">courses</div>
-      <div id="grades_content">grades</div>
-      <div id="tasks_content">tasks</div>
-      <div id="calender_content">calender</div>
-      <div id="inbox_content">inbox</div>
-      <div id="settings_content">settings</div>
-    </div>
-
-    <div class="col3">
-      <div style="width: 100%">
-        <form action="/logout" method="post">
-          <button id="student_logout" type="submit">logout</button>
-        </form>
-      </div>
-      <br /><br />
-      <form action="/prof_pic" method="post" enctype="multipart/form-data">
-        <div id="dp">
-          <img src="" alt="abc" id="profilepic" />
-          <div id="blackfill">
-            <input type="file" id="filechooser" accept=".jpg,.jpeg,.png" name="img" value="<%=data[" Img_url"]%>"/>
+          <div onclick="menu_item()" id="settings">
+            <ion-icon class="main-nav-icon" name="settings-outline"></ion-icon>
+            Settings
           </div>
         </div>
+      </div>
 
-        <button type="submit" id="upload_pic">Upload</button>
-      </form>
-      <br /><br />
-      <h2>Name</h2>
-      <h3>BE-III CSE</h3>
-      <br /><br />
-      <h2>Notifications</h2>
-      <br /><br /><br />
-      <h2>Messages</h2>
+      <div class="col2">
+        <h1 id="welcome">Hello</h1>
+        <h2>Welcome Back</h2>
+        <br /><br /><br />
+        <div id="home_content">In home</div>
+        <div id="courses_content">courses</div>
+        <div id="grades_content">grades</div>
+        <div id="tasks_content">tasks</div>
+        <div id="calender_content">calender</div>
+        <div id="inbox_content">inbox</div>
+        <div id="settings_content">settings</div>
+      </div>
+
+      <div class="col3">
+        <div style="width: 100%">
+          <form action="/logout" method="post">
+            <button id="student_logout" type="submit">logout</button>
+          </form>
+        </div>
+        <br /><br />
+        <form action="/prof_pic" method="post" enctype="multipart/form-data">
+          <div id="dp">
+            <img src="" alt="abc" id="profilepic" />
+            <div id="blackfill">
+              <input type="file" id="filechooser" accept=".jpg,.jpeg,.png"
+              name="img" value="<%=data[" Img_url"]%>"/>
+            </div>
+          </div>
+
+          <button type="submit" id="upload_pic">Upload</button>
+        </form>
+        <br /><br />
+        <h2>Name</h2>
+        <h3>BE-III CSE</h3>
+        <br /><br />
+        <h2>Notifications</h2>
+        <br /><br /><br />
+        <h2>Messages</h2>
+      </div>
     </div>
-  </div>
 
-  <p id="received_data" style="display:none;">
-    <%= data %>
-  </p>
-  <script src="../js/dashboard_s.js"></script>
-</body>
-
+    <p id="received_data" style="display: none"><%= data %></p>
+    <script src="../js/dashboard_s.js"></script>
+  </body>
 </html>
