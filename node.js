@@ -49,8 +49,10 @@ app.get('/dashboard_s', middleware, async (req, res) => {
     res.render("dashboard_s", { data });
 })
 app.get("/dashboard_t",async(req,res)=>{
-    let data = await connection.getData(req.session.user_id);
-    res.render("dashboard_t",{data});
+    let data_t = await connection.getData(req.session.user_id);
+    let data_s = await connection.getStudentData({})
+    res.render("dashboard_t",{data_t,data_s,data_t2:JSON.parse(data_t),data_s2:JSON.parse(data_s)});
+
 })
 app.post('/register', async (req, res) => {
     const First_name = req.body.fname;
@@ -90,11 +92,12 @@ app.post('/login', async (req, res) => {
     else {
         const tAvailable = await connection.teacherAvailable(email, password);
         if (tAvailable) {
-            let data = await connection.getTeacherData({ "Email": email, "Password": password })
+            let data_t = await connection.getTeacherData({ "Email": email, "Password": password })
+            let data_s = await connection.getStudentData({})
             const result = JSON.parse(await connection.TeacherId(email));
             req.session.user_id = result["_id"];
             console.log(req.session.user_id);
-            res.render('dashboard_t', { data })
+            res.render('dashboard_t', {data_t,data_s,data_t2:JSON.parse(data_t),data_s2:JSON.parse(data_s)})
         }
         else {
             res.send("No such user found");

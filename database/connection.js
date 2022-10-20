@@ -124,7 +124,7 @@ module.exports.showDbs = async () => {
 }
 
 module.exports.getStudentData = async (conditions) => {
-  const sdata = await Student.findOne(conditions);
+  const sdata = await Student.find(conditions);
   const studentdata = JSON.stringify(sdata);
   return studentdata;
 }
@@ -203,7 +203,7 @@ module.exports.TeacherId = async (email) => {
 }
 
 module.exports.getData=async(id)=>{
-  let data=await Student.findOne({_id:id});
+  let data = await Student.findOne({_id:id});
   if(data==null)
   {
     data=await Teacher.findOne({_id:id});

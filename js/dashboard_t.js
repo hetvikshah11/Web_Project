@@ -52,16 +52,20 @@ document.getElementById('filechooser').onmouseout = function () {
     document.getElementById('blackfill').style.opacity = '0'
 }
 
-let rdata = null;
-rdata = JSON.parse(document.getElementById('received_data').innerHTML);
-console.log(rdata)
-document.getElementById('welcome').innerHTML = 'Welcome ' + rdata.First_name;
+let tdata = null;
+tdata = JSON.parse(document.getElementById('teacher_data').innerHTML);
+console.log(tdata)
+document.getElementById('welcome').innerHTML = 'Welcome ' + tdata.First_name;
 
-if(rdata.Img_url){
+let sdata = null;
+sdata = JSON.parse(document.getElementById('student_data').innerHTML);
+console.log(sdata)
+
+if(tdata.Img_url){
     let pic=document.getElementById("profilepic");
     pic.style.width="100%";
     pic.style.height="100%"
-    pic.src=rdata.Img_url;
+    pic.src=tdata.Img_url;
 }
 else{
     let pic=document.getElementById("profilepic")

@@ -66,6 +66,24 @@ body {
   background-color: white;
 }
 
+#grades_content{
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-color: aqua;
+  margin: 10px 20px;
+}
+table,td,th{
+  border:1px solid black;
+  border-collapse: collapse;
+}
+table{
+  margin: auto;
+}
+td,th{
+  padding:5px;
+}
+
 .col3 {
   width: 20%;
   background-color: lightgrey;
