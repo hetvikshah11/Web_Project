@@ -206,3 +206,7 @@ a {
   color: white;
   width: 100%;
 }
+
+#grades_content,#attendance_content,#notes_content,#settings_content {
+  display: none;
+}
