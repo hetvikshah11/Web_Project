@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
 
 app.get('/dashboard_s', middleware, async (req, res) => {
     let data = await connection.getData(req.session.user_id);
-    data=JSON.parse(data);
+    // data=JSON.parse(data);
     res.render("dashboard_s", { data });
 })
 app.post('/register', async (req, res) => {
