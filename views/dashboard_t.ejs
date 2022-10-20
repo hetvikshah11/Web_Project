@@ -53,15 +53,16 @@
         <div class="col3">
             <div>
                 <div style="width: 100%">
-                    <button id="teacher_logout">Logout</button>
+                    <form action="/logout" method="post">
+                        <button id="teacher_logout" type="submit">logout</button>
+                    </form>
                 </div>
                 <br /><br />
                 <form action="/teacher_pic" method="post" enctype="multipart/form-data">
                     <div id="dp">
                         <img src="" alt="abc" id="profilepic" />
                         <div id="blackfill">
-                            <input type="file" id="filechooser" accept=".jpg,.jpeg,.png" name="img" value="<%=data["
-                                Img_url"]%>"/>
+                            <input type="file" id="filechooser" accept=".jpg,.jpeg,.png" name="img" value="<%=data["Img_url"]%>"/>
                         </div>
                     </div>
                     <br /><br />

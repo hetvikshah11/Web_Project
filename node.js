@@ -48,6 +48,10 @@ app.get('/dashboard_s', middleware, async (req, res) => {
     // data=JSON.parse(data);
     res.render("dashboard_s", { data });
 })
+app.get("/dashboard_t",async(req,res)=>{
+    let data = await connection.getData(req.session.user_id);
+    res.render("dashboard_t",{data});
+})
 app.post('/register', async (req, res) => {
     const First_name = req.body.fname;
     const Last_name = req.body.lname;
@@ -106,10 +110,7 @@ app.post("/prof_pic", storage.parser.single('img'), async (req, res) => {
     // res.render('dashboard_s', { data })
     res.redirect('/dashboard_s');
 })
-app.get("/dashboard_t",async(req,res)=>{
-    let data = await connection.getData(req.session.user_id);
-    res.render("dashboard_t",{data});
-})
+
 app.post('/teacher_pic',storage.parser.single('img'),async(req,res)=>{
     const result = await connection.updateTeacherProfPic(req.session.user_id, req.file.path);
     const data = await connection.getData(req.session.user_id);
