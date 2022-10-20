@@ -35,3 +35,9 @@ else{
     pic.src="../images/camera.svg";
 }
 
+console.log(document.getElementById("filechooser").value);
+document.getElementById("upload_pic").style.display="none";
+
+document.getElementById("filechooser").addEventListener('input',()=>{
+    document.getElementById("upload_pic").style.display="block";
+})
