@@ -45,7 +45,27 @@
             </div>
             <br /><br /><br />
             <div id="home_content">In home</div>
-            <div id="attendance_content">In attendance</div>
+            <div id="attendance_content">
+                <form action="/attendance" method="post">
+                    <table id="attendance_table">
+                        <tr>
+                            <th>Name of student</th>
+                            <th>Tick if present</th>
+                        </tr>
+                        <% for(let data in data_s2) {%>
+                            <tr>
+                                <td><%=data_s2[data].First_name%> <%=data_s2[data].Last_name%>
+                                </td>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                            </tr>
+                        <% } %>
+                    </table>
+                    <br>
+                    <button type="submit">Save Data</button>
+                </form>
+            </div>
             <div id="notes_content">In notes</div>
             <div id="grades_content">
                 <form action="/grades" method="post">
@@ -57,7 +77,7 @@
                         <% for(let data in data_s2) {%>
                             <tr>
                                 <td>
-                                    <%=data_s2[data].First_name%>
+                                    <%=data_s2[data].First_name%> <%=data_s2[data].Last_name%>
                                 </td>
                                 <td><input type="number" placeholder="Enter Marks"></td>
                             </tr>
@@ -96,10 +116,10 @@
             </div>
         </div>
     </div>
-    <p id="teacher_data">
+    <p id="teacher_data" style="display: none;">
         <%= data_t %>
     </p>
-    <p id="student_data">
+    <p id="student_data" style="display: none;">
         <%= data_s %>
     </p>
     <script src="../js/dashboard_t.js"></script>

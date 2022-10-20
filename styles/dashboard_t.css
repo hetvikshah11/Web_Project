@@ -73,6 +73,11 @@ body {
   background-color: aqua;
   margin: 10px 20px;
 }
+
+#attendance_table,#attendance_table td,#attendance_table th{
+  border: 2px solid black;
+  text-align: center;
+}
 table,td,th{
   border:1px solid black;
   border-collapse: collapse;
