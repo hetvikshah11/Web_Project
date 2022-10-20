@@ -90,7 +90,7 @@ app.post('/login', async (req, res) => {
             const result = JSON.parse(await connection.TeacherId(email));
             req.session.user_id = result["_id"];
             console.log(req.session.user_id);
-            res.render('dashboard_t.ejs', { data })
+            res.render('dashboard_t', { data })
         }
         else {
             res.send("No such user found");
@@ -106,8 +106,20 @@ app.post("/prof_pic", storage.parser.single('img'), async (req, res) => {
     // res.render('dashboard_s', { data })
     res.redirect('/dashboard_s');
 })
+app.get("/dashboard_t",async(req,res)=>{
+    let data = await connection.getData(req.session.user_id);
+    res.render("dashboard_t",{data});
+})
+app.post('/teacher_pic',storage.parser.single('img'),async(req,res)=>{
+    const result = await connection.updateTeacherProfPic(req.session.user_id, req.file.path);
+    const data = await connection.getData(req.session.user_id);
+    // console.log(req.file.path);
+    console.log(req.file.path);
+    // console.log(data);
+    // res.render('dashboard_s', { data })
+    res.redirect('/dashboard_t');
 
-
+})
 app.listen(3000, () => {
     console.log('Listening at Port 3000');
 })

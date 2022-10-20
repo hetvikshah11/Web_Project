@@ -224,3 +224,15 @@ module.exports.updateStudentProfPic=async(id,filepath)=>{
     console.log("Failure");
   }
 }
+module.exports.updateTeacherProfPic=async(id,filepath)=>{
+  let data=await Teacher.updateOne({_id:id},{$set:{Img_url:filepath}});
+  // let data=await Student.findByIdAndUpadte(id,{Img_url:filepath});
+  if(data)
+  {
+    console.log('Success');
+
+  }
+  else{
+    console.log("Failure");
+  }
+}

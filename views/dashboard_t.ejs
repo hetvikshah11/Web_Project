@@ -56,11 +56,16 @@
                     <button id="teacher_logout">Logout</button>
                 </div>
                 <br /><br />
-                <div id="dp">
-                    <img src="../images/camera.svg" id="profilepic" width="30px" height="30px">
-                    <div id="blackfill"></div>
-                    <input type="file" id="filechooser" onchange="change()">
-                </div>
+                <form action="/teacher_pic" method="post" enctype="multipart/form-data">
+                    <div id="dp">
+                      <img src="" alt="abc" id="profilepic" />
+                      <div id="blackfill">
+                        <input type="file" id="filechooser" accept=".jpg,.jpeg,.png" name="img" value="<%=data[" Img_url"]%>"/>
+                      </div>
+                    </div>
+            
+                    <button          type="submit" id="upload_pic">Upload</button>
+                  </form>
                 <br /><br />
                 <h2>Name</h2>
                 <h3>BE-III CSE</h3>
