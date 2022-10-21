@@ -62,6 +62,8 @@ app.post('/register', async (req, res) => {
     const Email = req.body.register_email;
     const Password = req.body.register_password;
     const Desig = req.body.register_desig;
+    const Subject = req.body.subject_name;
+    const Lectures = req.body.lecture_count;
     const sunique = await connection.isStudentUnique(Email);
     const tunique = await connection.isTeacherUnique(Email);
     if (sunique && tunique) {
@@ -69,7 +71,8 @@ app.post('/register', async (req, res) => {
             await connection.insertStudent(First_name, Last_name, Birth_date, Phone, Email, Password);
         }
         else {
-            await connection.insertTeacher(First_name, Last_name, Birth_date, Phone, Email, Password)
+            await connection.insertTeacher(First_name, Last_name, Birth_date, Phone, Email, Password, Subject, Lectures)
+            await connection.addSubject(Subject);
         }
         res.send("Success");
     }
