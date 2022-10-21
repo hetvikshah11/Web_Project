@@ -23,15 +23,18 @@ body {
   border-bottom-left-radius: 20px;
   color: white;
 }
+
 .menu_items div:hover {
   color: #364fc7;
   background-color: #eee;
   cursor: pointer;
 }
+
 .menu_items div.active {
   background-color: #364fc7;
   color: #eee;
 }
+
 .active {
   background-color: #364fc7;
   color: #eee;
@@ -66,27 +69,39 @@ body {
   background-color: white;
 }
 
-#grades_content{
+#grades_content {
   height: 100%;
-  width: 100%;
-  display: block;
-  background-color: aqua;
-  margin: 10px 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
 }
 
-#attendance_table,#attendance_table td,#attendance_table th{
+#attendance_table,
+#attendance_table td,
+#attendance_table th {
   border: 2px solid black;
   text-align: center;
 }
-table,td,th{
-  border:1px solid black;
+
+table,
+td,
+th {
+  border: 1px solid black;
   border-collapse: collapse;
 }
-table{
+
+table {
   margin: auto;
 }
-td,th{
-  padding:5px;
+
+td,
+th {
+  padding: 5px;
 }
 
 .col3 {
@@ -98,7 +113,8 @@ td,th{
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.col3 > div {
+
+.col3>div {
   width: 80%;
   padding: 5px;
   display: flex;
@@ -110,6 +126,7 @@ td,th{
   border-radius: 10px;
   margin: 10px 5px;
 }
+
 .menu_items {
   display: flex;
   flex-direction: column;
@@ -234,4 +251,17 @@ td,th{
 #notes_content,
 #settings_content {
   display: none;
+}
+.submit{
+  width: 100%;
+  border: 0;
+  background-color: #00B4D8;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: large;
+}
+.s_id{
+  display: none;
+  
 }
