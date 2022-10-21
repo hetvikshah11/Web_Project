@@ -8,6 +8,10 @@ module.exports.createSchema = async () => {
   }).catch((err) => {
     console.log("Failed", err);
   });
+  const lec_attained=new mongoose.Schema({
+    Subject_name:String,
+    attended:Number
+  })
   const student_schema = new mongoose.Schema({
     First_name: {
       type: String,
@@ -36,9 +40,7 @@ module.exports.createSchema = async () => {
     Total_Lecture: {
       type: Object
     },
-    Lecture_Attended: {
-      type: Object
-    },
+    Lecture_Attended:[lec_attained],
     Img_url: {
       type: String
     },
@@ -74,7 +76,7 @@ module.exports.createSchema = async () => {
       type: String,
       required: true
     },
-    Subject_name:{
+    Subject_name: {
       type: String
     },
     Lecture_count: {
@@ -87,7 +89,7 @@ module.exports.createSchema = async () => {
       type: String
     },
   });
-  Teacher = mongoose.model('Teacher',teacher_schema);
+  Teacher = mongoose.model('Teacher', teacher_schema);
 
 }
 
@@ -194,50 +196,53 @@ module.exports.isTeacherUnique = async function (email) {
 
 module.exports.StudentId = async (email) => {
 
-  let data=await Student.findOne({Email:email});
+  let data = await Student.findOne({ Email: email });
   let result = JSON.stringify(data);
   // console.log(result);
   return result;
 }
 module.exports.TeacherId = async (email) => {
 
-  let data=await Teacher.findOne({Email:email});
+  let data = await Teacher.findOne({ Email: email });
   let result = JSON.stringify(data);
   // console.log(result);
   return result;
 }
 
-module.exports.getData=async(id)=>{
-  let data = await Student.findOne({_id:id});
-  if(data==null)
-  {
-    data=await Teacher.findOne({_id:id});
+module.exports.getData = async (id) => {
+  let data = await Student.findOne({ _id: id });
+  if (data == null) {
+    data = await Teacher.findOne({ _id: id });
   }
-  let result=JSON.stringify(data);
+  let result = JSON.stringify(data);
   return result;
 }
 
-module.exports.updateStudentProfPic=async(id,filepath)=>{
-  let data=await Student.updateOne({_id:id},{$set:{Img_url:filepath}});
+module.exports.updateStudentProfPic = async (id, filepath) => {
+  let data = await Student.updateOne({ _id: id }, { $set: { Img_url: filepath } });
   // let data=await Student.findByIdAndUpadte(id,{Img_url:filepath});
-  if(data)
-  {
+  if (data) {
     console.log('Success');
 
   }
-  else{
+  else {
     console.log("Failure");
   }
 }
-module.exports.updateTeacherProfPic=async(id,filepath)=>{
-  let data=await Teacher.updateOne({_id:id},{$set:{Img_url:filepath}});
+module.exports.updateTeacherProfPic = async (id, filepath) => {
+  let data = await Teacher.updateOne({ _id: id }, { $set: { Img_url: filepath } });
   // let data=await Student.findByIdAndUpadte(id,{Img_url:filepath});
-  if(data)
-  {
+  if (data) {
     console.log('Success');
 
   }
-  else{
+  else {
     console.log("Failure");
   }
+}
+
+module.exports.addSubject = async (Subject) => {
+ 
+  let data = await Student.updateMany({}, { $set: { "Lecture_Attended": { Subject_name:Subject,attended:0 } } })
+
 }

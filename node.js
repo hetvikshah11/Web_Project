@@ -127,6 +127,21 @@ app.post('/teacher_pic',storage.parser.single('img'),async(req,res)=>{
     res.redirect('/dashboard_t');
 
 })
+
+
+app.post('/grades',(req,res)=>{
+    const marks=req.body.marks;
+    const id=request.body.id;
+})
+
+
+
+
+
+
+
+
+
 app.listen(3000, () => {
     console.log('Listening at Port 3000');
 })
