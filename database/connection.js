@@ -270,3 +270,11 @@ module.exports.addGrades = async (subject, marks, id) => {
 
 
 }
+
+module.exports.markAttendance = async(subject,id) => {
+  let data = await Student.findOne({_id:id})
+  let data2 = await Student.updateOne({_id:id},{$set:{Lecture_Attended:{Subject_name:subject, attended:data["Lecture_attended"]["Subject_name"]}}},{upsert:true})
+  // if found then replace else add
+  console.log(data)
+}
+// ,{$set:{Lecture_Attended:{Subject_name:subject, attended:1}}},{upsert:true}

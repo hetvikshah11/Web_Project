@@ -140,7 +140,34 @@ app.post('/grades', async (req, res) => {
 
 })
 
-
+app.post('/attendance', async (req, res) => {
+    const ifattended = req.body.attended;
+    const id = req.body.id;
+    // const subject = await connection.getSubjectName(req.session.user_id);/
+    // console.log(if_attended,id);
+    console.log(typeof (ifattended))
+    const subject = await connection.getSubjectName(req.session.user_id);
+    if (typeof (ifattended) === "string") 
+    {
+        await connection.markAttendance(subject,ifattended)
+    }
+    else if(typeof (ifattended) === "object") {
+        i = 0; // represents if_attended
+        j = 0; // represents id
+        console.log(typeof (ifattended))
+        for (ids of id) {
+            if (ifattended[i] === id[j]) {
+                i++;
+                j++;
+                // console.log('present')
+                await connection.markAttendance(subject,ifattended[i])
+            }
+            else {
+                j++;
+            }
+        }
+    }
+})
 
 
 

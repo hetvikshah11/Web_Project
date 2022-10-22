@@ -59,9 +59,9 @@
                                 <td><%=data_s2[data].First_name%> <%=data_s2[data].Last_name%>
                                 </td>
                                 <td>
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="<%=data_s2[data]._id%>" name="attended" value="<%=data_s2[data]._id%>">
                                 </td>
-                                <td class="s_id"><input min="0" max="100" name="id"  value="<%=data_s2[data]._id%>" ></td>
+                                <td class="s_id"><input name="id" value="<%=data_s2[data]._id%>"></td>
                             </tr>
                         <% } %>
                     </table>

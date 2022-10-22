@@ -61,7 +61,23 @@
         <h1 id="welcome">Hello</h1>
         <h2>Welcome Back</h2>
         <br /><br /><br />
-        <div id="home_content">In home</div>
+        <div id="home_content">
+          <h1>Displaying Attendance</h1>
+          <table id="display_attendance">
+            <tr>
+              <th>Subject</th>
+              <th>Lectures_attended</th>
+              <th>Total Lectures conducted</th>
+            </tr>
+            <% for(let data in data_s2[0]["Lecture_Attended"]) {%>
+              <tr>
+                <td><%=data_s2[0]["Lecture_Attended"][data]["Subject_name"]%></td>
+                <td><%=data_s2[0]["Lecture_Attended"][data]["attended"]%></td>
+                <td><%=data_s2[0]["Total_Lecture"][data]["No_of_lec"]%></td>
+              </tr>
+            <% } %>
+          </table>
+        </div>
         <div id="courses_content">courses</div>
         <div id="grades_content">
           <h1>Your Marks are as below</h1>

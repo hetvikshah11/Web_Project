@@ -46,15 +46,6 @@ body {
   border-radius: 30%;
 }
 
-#courses_content,
-#grades_content,
-#tasks_content,
-#calender_content,
-#inbox_content,
-#settings_content {
-  display: none;
-}
-
 .col2 {
   width: 60%;
   background-color: #ffd5c2;
@@ -84,6 +75,31 @@ body {
   display: flex;
   justify-content: left;
   border: 2px solid #023e8a;
+}
+
+#display_marks {
+  border-collapse: collapse;
+  width: 90%;
+  border: 2px solid black;
+  text-align: center;
+}
+
+#display_marks td,
+#display_marks th {
+  border: 2px solid black;
+  padding: 5px;
+}
+
+#display_attendance{
+  border-collapse: collapse;
+  width: 90%;
+  border: 2px solid black;
+  text-align: center;
+}
+
+#display_attendance td,#display_attendance th{
+  border: 2px solid black;
+  padding: 5px;
 }
 
 .col3 {
@@ -171,17 +187,4 @@ a {
   text-decoration: none;
   width: 100%;
   color: white;
-}
-
-#display_marks {
-  border-collapse: collapse;
-  width: 90%;
-  border: 2px solid black;
-  text-align: center;
-}
-
-#display_marks td,
-#display_marks th {
-  border: 2px solid black;
-  padding: 5px;
 }
