@@ -8,9 +8,17 @@ module.exports.createSchema = async () => {
   }).catch((err) => {
     console.log("Failed", err);
   });
-  const lec_attained=new mongoose.Schema({
-    Subject_name:String,
-    attended:Number
+  const lectures = new mongoose.Schema({
+    Subject_name: String,
+    attended: Number
+  })
+  const lecture_info = new mongoose.Schema({
+    Subject_name: String,
+    No_of_lec: Number
+  })
+  const Grades = new mongoose.Schema({
+    Subject_name: String,
+    Marks: Number
   })
   const student_schema = new mongoose.Schema({
     First_name: {
@@ -37,16 +45,12 @@ module.exports.createSchema = async () => {
       type: String,
       required: true
     },
-    Total_Lecture: {
-      type: Object
-    },
-    Lecture_Attended:[lec_attained],
+    Total_Lecture: [lecture_info],
+    Lecture_Attended: [lectures],
     Img_url: {
       type: String
     },
-    Marks: {
-      type: Object
-    }
+    Marks: [Grades]
 
   });
   Student = mongoose.model('student', student_schema);
@@ -241,8 +245,28 @@ module.exports.updateTeacherProfPic = async (id, filepath) => {
   }
 }
 
-module.exports.addSubject = async (Subject) => {
- 
-  let data = await Student.updateMany({}, { $set: { "Lecture_Attended": { Subject_name:Subject,attended:0 } } })
+module.exports.addSubject = async (Subject, count) => {
+  console.log(count);
+  let data1 = await Student.updateMany({}, { $push: { "Lecture_Attended": { Subject_name: Subject, attended: 0 } } });
+  let data2 = await Student.updateMany({}, { $push: { "Total_Lecture": { Subject_name: Subject, No_of_lec: count } } })
+
+}
+module.exports.getSubjectName = async (id) => {
+  let data = await Teacher.findOne({ _id: id });
+  let subject = data.Subject_name;
+  return subject;
+
+}
+module.exports.addGrades = async (subject, marks, id) => {
+  for (i in marks) {
+    var data = await Student.updateOne({ _id: id[i] }, {
+      $push: {
+        "Marks": {
+          Subject_name: subject, Marks: marks[i]
+        }
+      }
+    })
+  }
+
 
 }

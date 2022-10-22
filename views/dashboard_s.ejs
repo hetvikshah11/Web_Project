@@ -63,7 +63,21 @@
         <br /><br /><br />
         <div id="home_content">In home</div>
         <div id="courses_content">courses</div>
-        <div id="grades_content">grades</div>
+        <div id="grades_content">
+          <h1>Your Marks are as below</h1>
+          <table id="display_marks">
+            <tr>
+              <th>Subject Name</th>
+              <th>Marks(out of 100)</th>
+            </tr>
+            <% for(let data in data_s2[0]["Marks"]) {%>
+              <tr>
+                <td><%=data_s2[0]["Marks"][data]["Subject_name"]%></td>
+                <td><%=data_s2[0]["Marks"][data]["Marks"]%></td>
+              </tr>
+            <% } %>
+          </table>
+        </div>
         <div id="tasks_content">tasks</div>
         <div id="calender_content">calender</div>
         <div id="inbox_content">inbox</div>
@@ -82,8 +96,8 @@
             <img src="" alt="abc" id="profilepic" />
             <div id="blackfill">
               <input type="file" id="filechooser" accept=".jpg,.jpeg,.png"
-              name="img" value="<%=data[" Img_url"]%>"/>
-            </div>
+              name="img" value="<%=data_s[" Img_url"]%>"/>
+            </div>
           </div>
 
           <button type="submit" id="upload_pic">Upload</button>
@@ -98,7 +112,7 @@
       </div>
     </div>
 
-    <p id="received_data" style="display: none"><%= data %></p>
+    <p id="received_data" style="display: none"><%= data_s %></p>
     <script src="../js/dashboard_s.js"></script>
   </body>
 </html>

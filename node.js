@@ -44,14 +44,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/dashboard_s', middleware, async (req, res) => {
-    let data = await connection.getData(req.session.user_id);
+    let data_s = await connection.getData(req.session.user_id);
     // data=JSON.parse(data);
-    res.render("dashboard_s", { data });
+    res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s) });
 })
-app.get("/dashboard_t",async(req,res)=>{
+
+app.get("/dashboard_t", async (req, res) => {
     let data_t = await connection.getData(req.session.user_id);
     let data_s = await connection.getStudentData({})
-    res.render("dashboard_t",{data_t,data_s,data_t2:JSON.parse(data_t),data_s2:JSON.parse(data_s)});
+    res.render("dashboard_t", { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s) });
 
 })
 app.post('/register', async (req, res) => {
@@ -66,13 +67,15 @@ app.post('/register', async (req, res) => {
     const Lectures = req.body.lecture_count;
     const sunique = await connection.isStudentUnique(Email);
     const tunique = await connection.isTeacherUnique(Email);
+    console.log(Lectures);
     if (sunique && tunique) {
         if (Desig === "student") {
             await connection.insertStudent(First_name, Last_name, Birth_date, Phone, Email, Password);
         }
         else {
             await connection.insertTeacher(First_name, Last_name, Birth_date, Phone, Email, Password, Subject, Lectures)
-            await connection.addSubject(Subject);
+            await connection.addSubject(Subject, Lectures);
+
         }
         res.send("Success");
     }
@@ -86,11 +89,11 @@ app.post('/login', async (req, res) => {
     const password = req.body.password;
     const sAvailable = await connection.studentAvailable(email, password);
     if (sAvailable) {
-        let data = await connection.getStudentData({ "Email": email, "Password": password })
+        let data_s = await connection.getStudentData({ "Email": email, "Password": password })
         const result = JSON.parse(await connection.StudentId(email));
         req.session.user_id = result["_id"];
         console.log(req.session.user_id);
-        res.render('dashboard_s', { data });
+        res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s) });
     }
     else {
         const tAvailable = await connection.teacherAvailable(email, password);
@@ -100,7 +103,7 @@ app.post('/login', async (req, res) => {
             const result = JSON.parse(await connection.TeacherId(email));
             req.session.user_id = result["_id"];
             console.log(req.session.user_id);
-            res.render('dashboard_t', {data_t,data_s,data_t2:JSON.parse(data_t),data_s2:JSON.parse(data_s)})
+            res.render('dashboard_t', { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s) })
         }
         else {
             res.send("No such user found");
@@ -117,7 +120,7 @@ app.post("/prof_pic", storage.parser.single('img'), async (req, res) => {
     res.redirect('/dashboard_s');
 })
 
-app.post('/teacher_pic',storage.parser.single('img'),async(req,res)=>{
+app.post('/teacher_pic', storage.parser.single('img'), async (req, res) => {
     const result = await connection.updateTeacherProfPic(req.session.user_id, req.file.path);
     const data = await connection.getData(req.session.user_id);
     // console.log(req.file.path);
@@ -129,9 +132,12 @@ app.post('/teacher_pic',storage.parser.single('img'),async(req,res)=>{
 })
 
 
-app.post('/grades',(req,res)=>{
-    const marks=req.body.marks;
-    const id=request.body.id;
+app.post('/grades', async (req, res) => {
+    const marks = req.body.marks;
+    const id = req.body.id;
+    const subject = await connection.getSubjectName(req.session.user_id);
+    await connection.addGrades(subject, marks, id);
+
 })
 
 
