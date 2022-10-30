@@ -40,14 +40,9 @@
             My Tasks
           </div>
 
-          <div onclick="menu_item()" id="calender">
+          <div onclick="menu_item()" id="materials">
             <ion-icon class="main-nav-icon" name="calendar-outline"></ion-icon>
-            Calender
-          </div>
-
-          <div onclick="menu_item()" id="inbox">
-            <ion-icon class="main-nav-icon" name="albums-outline"></ion-icon>
-            Inbox
+            Materials
           </div>
 
           <div onclick="menu_item()" id="settings">
@@ -78,7 +73,12 @@
             <% } %>
           </table>
         </div>
-        <div id="courses_content">courses</div>
+        <div id="courses_content">
+          <h1>You have been enrolled in the following subjects</h1>
+          <% for(let data in data_s2[0]["Lecture_Attended"]) {%>
+            <h3 class="courses_enrolled"><%= data_s2[0]["Lecture_Attended"][data]["Subject_name"]%></h3>
+          <% } %>
+        </div>
         <div id="grades_content">
           <h1>Your Marks are as below</h1>
           <table id="display_marks">
@@ -95,8 +95,7 @@
           </table>
         </div>
         <div id="tasks_content">tasks</div>
-        <div id="calender_content">calender</div>
-        <div id="inbox_content">inbox</div>
+        <div id="materials_content">materials</div>
         <div id="settings_content">settings</div>
       </div>
 
