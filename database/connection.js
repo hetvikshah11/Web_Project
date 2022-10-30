@@ -20,6 +20,14 @@ module.exports.createSchema = async () => {
     Subject_name: String,
     Marks: Number
   })
+
+  const material_schema=new mongoose.Schema({
+    Subject_name:String,
+    File_name:String,
+    URL:String
+  })
+  Material = mongoose.model('material', material_schema);
+
   const student_schema = new mongoose.Schema({
     First_name: {
       type: String,
@@ -285,8 +293,22 @@ module.exports.markAttendance = async(subject,id) => {
       console.log(res);
     }
   }
-//   let data2 = await Student.updateOne({_id:id},{$set:{Lecture_Attended:{Subject_name:subject, attended:data["Lecture_attended"]["Subject_name"]}}},{upsert:true})
-//   // if found then replace else add
-//   console.log(data)
 }
-// ,{$set:{Lecture_Attended:{Subject_name:subject, attended:1}}},{upsert:true}
+
+module.exports.insertMaterial = async (subject,link,name) => {
+
+  let material = new Material({
+    Subject_name:subject,
+    File_name:name,
+    URL:link
+  })
+  let result = await material.save();
+  console.log(result);
+
+};
+
+
+module.exports.getMaterial=async(subject)=>{
+  let result=await Material.find({Subject_name:subject});
+  return JSON.stringify(result);
+}

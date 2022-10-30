@@ -52,9 +52,11 @@ app.get('/dashboard_s', middleware, async (req, res) => {
 app.get("/dashboard_t", async (req, res) => {
     let data_t = await connection.getData(req.session.user_id);
     let data_s = await connection.getStudentData({})
-    res.render("dashboard_t", { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s) });
-
+    let material=await connection.getMaterial(await connection.getSubjectName(req.session.user_id))
+    material=JSON.parse(material);
+    res.render("dashboard_t", { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s),material });
 })
+
 app.post('/register', async (req, res) => {
     const First_name = req.body.fname;
     const Last_name = req.body.lname;
@@ -99,15 +101,17 @@ app.post('/login', async (req, res) => {
         const tAvailable = await connection.teacherAvailable(email, password);
         if (tAvailable) {
             let data_t = await connection.getTeacherData({ "Email": email, "Password": password })
-            let data_s = await connection.getStudentData({})
+            let data_s = await connection.getStudentData({});
             const result = JSON.parse(await connection.TeacherId(email));
             req.session.user_id = result["_id"];
             console.log(req.session.user_id);
-            res.render('dashboard_t', { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s) })
+            let material=await connection.getMaterial(await connection.getSubjectName(req.session.user_id));
+            material=JSON.parse(material);
+            res.render('dashboard_t', { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s),material })
         }
         else {
             res.send("No such user found");
-        }
+        }
     }
 })
 app.post("/prof_pic", storage.parser.single('img'), async (req, res) => {
@@ -173,10 +177,14 @@ app.post('/attendance', async (req, res) => {
     }
 })
 
-
-
-
-
+app.post('/material', async (req, res) => {
+    const subject = await connection.getSubjectName(req.session.user_id);
+    const link=req.body.URL;
+    const name=req.body.File_name;
+    console.log(link);
+   await connection.insertMaterial(subject,link,name);
+    res.redirect('/dashboard_t');
+})
 
 
 app.listen(3000, () => {
