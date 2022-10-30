@@ -46,7 +46,16 @@
                 <h2>Welcome Back</h2>
             </div>
             <br /><br /><br />
-            <div id="home_content">In home</div>
+            <div id="home_content">
+                <div class="lec_taken">
+                  <h2>Lectures Taken</h2>
+                  <p>45</p>
+                </div>
+                <div class="total_lec">
+                  <h2>Total Lectures</h2>
+                  <p><%= data_t2["Lecture_count"] %></p>
+                </div>
+              </div>
             <div id="attendance_content">
                 <form action="/attendance" method="post">
                     <table id="attendance_table">
@@ -112,7 +121,7 @@
                     <button type="submit" id="upload_pic">Upload</button>
                 </form>
                     <br /><br />
-                    <h2>Name</h2>
+                    <h2><%=data_s2["First_name"]%> <%=data_s2["Last_name"]%></h2>
                     <h3>BE-III CSE</h3>
                     <br /><br />
                     <h2>Notifications</h2>

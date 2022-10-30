@@ -114,7 +114,7 @@ th {
   border-bottom-right-radius: 20px;
 }
 
-.col3>div {
+.col3 > div {
   width: 80%;
   padding: 5px;
   display: flex;
@@ -245,17 +245,21 @@ th {
   height: 80%;
   padding: 10px;
 }
-
+#home_content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 95%;
+}
 #grades_content,
 #attendance_content,
 #notes_content,
 #settings_content {
   display: none;
 }
-.submit{
+.submit {
   width: 100%;
   border: 0;
-  background-color: #00B4D8;
+  background-color: #00b4d8;
   color: white;
   padding: 10px;
   border-radius: 10px;
@@ -265,3 +269,24 @@ th {
   display: none;
   
 } */
+.lec_taken,
+.total_lec {
+  text-align: center;
+  margin: 10px 20px;
+  width: 50%;
+  border-radius: 15px;
+  border: 2px solid black;
+  padding-left: 10px;
+  color: black;
+  background-color: white;
+}
+.lec_taken h2,
+.total_lec h2 {
+  font-weight: 500;
+  font-size: 25px;
+}
+.lec_taken p,
+.total_lec p {
+  font-size: 46px;
+  font-weight: 600;
+}
