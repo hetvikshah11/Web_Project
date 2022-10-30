@@ -267,8 +267,6 @@ module.exports.addGrades = async (subject, marks, id) => {
       }
     })
   }
-
-
 }
 
 module.exports.markAttendance = async(subject,id) => {

@@ -137,7 +137,7 @@ app.post('/grades', async (req, res) => {
     const id = req.body.id;
     const subject = await connection.getSubjectName(req.session.user_id);
     await connection.addGrades(subject, marks, id);
-
+    res.redirect('/dashboard_t')
 })
 
 app.post('/attendance', async (req, res) => {
