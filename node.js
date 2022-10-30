@@ -151,16 +151,20 @@ app.post('/attendance', async (req, res) => {
     {
         await connection.markAttendance(subject,ifattended)
     }
-    else if(typeof (ifattended) === "object") {
+    else if(typeof(ifattended)==="undefined")
+    {
+        console.log('no attendance')
+    }
+    else {
         i = 0; // represents if_attended
         j = 0; // represents id
         console.log(typeof (ifattended))
         for (ids of id) {
             if (ifattended[i] === id[j]) {
+                await connection.markAttendance(subject,ifattended[i])
                 i++;
                 j++;
                 // console.log('present')
-                await connection.markAttendance(subject,ifattended[i])
             }
             else {
                 j++;

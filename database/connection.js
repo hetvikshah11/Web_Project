@@ -272,9 +272,23 @@ module.exports.addGrades = async (subject, marks, id) => {
 }
 
 module.exports.markAttendance = async(subject,id) => {
+  console.log(id)
   let data = await Student.findOne({_id:id})
-  let data2 = await Student.updateOne({_id:id},{$set:{Lecture_Attended:{Subject_name:subject, attended:data["Lecture_attended"]["Subject_name"]}}},{upsert:true})
-  // if found then replace else add
-  console.log(data)
+  let result = data.Lecture_Attended
+  // console.log(data.Lecture_Attended)
+  for(d in result)
+  {
+    if(result[d].Subject_name===subject)
+    {
+      let att = result[d].attended + 1
+      let res=await Student.updateOne({_id:id,'Lecture_Attended.Subject_name':subject},{$set:{
+        'Lecture_Attended.$.attended':att
+      }});
+      console.log(res);
+    }
+  }
+//   let data2 = await Student.updateOne({_id:id},{$set:{Lecture_Attended:{Subject_name:subject, attended:data["Lecture_attended"]["Subject_name"]}}},{upsert:true})
+//   // if found then replace else add
+//   console.log(data)
 }
 // ,{$set:{Lecture_Attended:{Subject_name:subject, attended:1}}},{upsert:true}
