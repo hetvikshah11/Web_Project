@@ -54,12 +54,11 @@ document.getElementById('filechooser').onmouseout = function () {
 
 let tdata = null;
 tdata = JSON.parse(document.getElementById('teacher_data').innerHTML);
-console.log(tdata)
-document.getElementById('welcome').innerHTML = 'Welcome ' + tdata.First_name;
+// console.log(tdata)
 
 let sdata = null;
 sdata = JSON.parse(document.getElementById('student_data').innerHTML);
-console.log(sdata)
+// console.log(sdata)
 
 if(tdata.Img_url){
     let pic=document.getElementById("profilepic");

@@ -26,7 +26,9 @@ const lectures_label = document.getElementById('lectures_label')
 const register_lectures = document.getElementById('register_lectures')
 document.getElementById('register_student').onclick = function(){
     document.getElementById('optional').style.display = 'none'
+    document.getElementById('register_year').style.display = 'block'
 }
 document.getElementById('register_teacher').onfocus = function(){
     document.getElementById('optional').style.display = 'block'
+    document.getElementById('register_year').style.display = 'none'
 }

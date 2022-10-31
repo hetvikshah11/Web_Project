@@ -109,7 +109,7 @@
           </tr>
           <% } %>
         </table>
-        </div>
+      </div>
         <div id="materials_content">
           <h1>Displaying the materials</h1>
           <table id="material_table">
@@ -143,18 +143,20 @@
             <div id="blackfill">
               <input type="file" id="filechooser" accept=".jpg,.jpeg,.png"
               name="img" value="<%=data_s[" Img_url"]%>"/>
-            </div>
+            </div>
           </div>
 
           <button type="submit" id="upload_pic">Upload</button>
         </form>
         <br /><br />
         <h2><%=data_s2[0].First_name%> <%=data_s2[0].Last_name%></h2>
-        <h3>BE-III CSE</h3>
+        <h3>
+          <%=data_s2[0].Year%>
+        </h3>
         <br /><br />
-        <h2>Notifications</h2>
+        <!-- <h2>Notifications</h2>
         <br /><br /><br />
-        <h2>Messages</h2>
+        <h2>Messages</h2> -->
       </div>
     </div>
 

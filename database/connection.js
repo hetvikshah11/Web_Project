@@ -59,6 +59,9 @@ module.exports.createSchema = async () => {
       type: String,
       required: true
     },
+    Year:{
+      type: String
+    },
     Total_Lecture: [lecture_info],
     Lecture_Attended: [lectures],
     Img_url: {
@@ -112,7 +115,7 @@ module.exports.createSchema = async () => {
 
 }
 
-module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, Email, Password) => {
+module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, Email, Password,Year) => {
 
   let data = new Student({
     First_name: First_name,
@@ -120,7 +123,8 @@ module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, 
     Birth_date: Birth_date,
     Phone: Phone,
     Email: Email,
-    Password: Password
+    Password: Password,
+    Year:Year
   })
   let result = await data.save();
   console.log(result);

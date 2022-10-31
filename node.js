@@ -75,10 +75,11 @@ app.post('/register', async (req, res) => {
     const Lectures = req.body.lecture_count;
     const sunique = await connection.isStudentUnique(Email);
     const tunique = await connection.isTeacherUnique(Email);
+    const year = await req.body.year;
     console.log(Lectures);
     if (sunique && tunique) {
         if (Desig === "student") {
-            await connection.insertStudent(First_name, Last_name, Birth_date, Phone, Email, Password);
+            await connection.insertStudent(First_name, Last_name, Birth_date, Phone, Email, Password,year);
         }
         else {
             await connection.insertTeacher(First_name, Last_name, Birth_date, Phone, Email, Password, Subject, Lectures)
@@ -100,7 +101,7 @@ app.post('/login', async (req, res) => {
         let data_s = await connection.getStudentData({ "Email": email, "Password": password })
         const result = JSON.parse(await connection.StudentId(email));
         req.session.user_id = result["_id"];
-        console.log(req.session.user_id);
+        // console.log(req.session.user_id);
         let material=await connection.getAllMaterial()
     material=JSON.parse(material);
     let assignment=await connection.getAllAssignment()
@@ -114,7 +115,7 @@ app.post('/login', async (req, res) => {
             let data_s = await connection.getStudentData({});
             const result = JSON.parse(await connection.TeacherId(email));
             req.session.user_id = result["_id"];
-            console.log(req.session.user_id);
+            // console.log(req.session.user_id);
             let material=await connection.getMaterial(await connection.getSubjectName(req.session.user_id));
             material=JSON.parse(material);
             let assignment=await connection.getAssignment(await connection.getSubjectName(req.session.user_id))
@@ -130,8 +131,8 @@ app.post("/prof_pic", storage.parser.single('img'), async (req, res) => {
     const result = await connection.updateStudentProfPic(req.session.user_id, req.file.path);
     const data = await connection.getData(req.session.user_id);
     // console.log(req.file.path);
-    console.log(req.file.path);
-    console.log(data);
+    // console.log(req.file.path);
+    // console.log(data);
     // res.render('dashboard_s', { data })
     res.redirect('/dashboard_s');
 })
@@ -140,7 +141,7 @@ app.post('/teacher_pic', storage.parser.single('img'), async (req, res) => {
     const result = await connection.updateTeacherProfPic(req.session.user_id, req.file.path);
     const data = await connection.getData(req.session.user_id);
     // console.log(req.file.path);
-    console.log(req.file.path);
+    // console.log(req.file.path);
     // console.log(data);
     // res.render('dashboard_s', { data })
     res.redirect('/dashboard_t');
@@ -162,7 +163,7 @@ app.post('/attendance', async (req, res) => {
     const id = req.body.id;
     // const subject = await connection.getSubjectName(req.session.user_id);/
     // console.log(if_attended,id);
-    console.log(typeof (ifattended))
+    // console.log(typeof (ifattended))
     const subject = await connection.getSubjectName(req.session.user_id);
     if (typeof (ifattended) === "string") 
     {
@@ -175,7 +176,7 @@ app.post('/attendance', async (req, res) => {
     else {
         i = 0; // represents if_attended
         j = 0; // represents id
-        console.log(typeof (ifattended))
+        // console.log(typeof (ifattended))
         for (ids of id) {
             if (ifattended[i] === id[j]) {
                 await connection.markAttendance(subject,ifattended[i])
@@ -189,16 +190,14 @@ app.post('/attendance', async (req, res) => {
         }
     }
      res.redirect('/dashboard_t')
-
-
 })
 
 app.post('/material', async (req, res) => {
     const subject = await connection.getSubjectName(req.session.user_id);
     const link=req.body.URL;
     const name=req.body.File_name;
-    console.log(link);
-   await connection.insertMaterial(subject,link,name);
+    // console.log(link);
+    await connection.insertMaterial(subject,link,name);
     res.redirect('/dashboard_t');
 })
 
@@ -206,7 +205,7 @@ app.post('/assignment', async (req, res) => {
     const subject = await connection.getSubjectName(req.session.user_id);
     const link=req.body.URL;
     const name=req.body.File_name;
-    console.log(link);
+    // console.log(link);
    await connection.uploadAssignment(subject,link,name);
     res.redirect('/dashboard_t');
 })
