@@ -28,7 +28,12 @@ module.exports.createSchema = async () => {
     URL:String
   })
   Material = mongoose.model('material', material_schema);
-
+  const assignment_schema=new mongoose.Schema({
+    Subject_name:String,
+    File_name:String,
+    URL:String
+  })
+  Assignment = mongoose.model('assignment', assignment_schema);
   const student_schema = new mongoose.Schema({
     First_name: {
       type: String,
@@ -308,18 +313,34 @@ module.exports.insertMaterial = async (subject,link,name) => {
   console.log(result);
 
 };
+module.exports.uploadAssignment = async (subject,link,name) => {
 
+  let assignment = new Assignment({
+    Subject_name:subject,
+    File_name:name,
+    URL:link
+  })
+  let result = await assignment.save();
+  console.log(result);
+
+};
 
 module.exports.getMaterial=async(subject)=>{
   let result=await Material.find({Subject_name:subject});
   return JSON.stringify(result);
 }
-
+module.exports.getAssignment=async(subject)=>{
+  let result=await Assignment.find({Subject_name:subject});
+  return JSON.stringify(result);
+}
 module.exports.getAllMaterial=async()=>{
   let result=await Material.find({});
   return JSON.stringify(result);
 }
-
+module.exports.getAllAssignment=async()=>{
+  let result=await Assignment.find({});
+  return JSON.stringify(result);
+}
 module.exports.addLectureConducted = async(id) => {
   let result = await Teacher.findOne({_id:id})
   let conducted = result.Lecture_Conducted + 1

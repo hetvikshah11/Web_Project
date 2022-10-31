@@ -96,7 +96,20 @@
             <% } %>
           </table>
         </div>
-        <div id="tasks_content">tasks</div>
+        <div id="tasks_content">
+          <table>
+            <th>Subject Name</th>
+            <th>File Name</th>
+            <th>Link</th>
+          <% for(let data in assignment) {%>
+          <tr>
+            <td><%=assignment[data]["Subject_name"]%></td>
+            <td><%=assignment[data]["File_name"]%></td>
+            <td><a target="_blank" href="<%=assignment[data]["URL"]%>">Open File</a></td>
+          </tr>
+          <% } %>
+        </table>
+        </div>
         <div id="materials_content">
           <h1>Displaying the materials</h1>
           <table id="material_table">
@@ -136,7 +149,7 @@
           <button type="submit" id="upload_pic">Upload</button>
         </form>
         <br /><br />
-        <h2>Name</h2>
+        <h2><%=data_s2[0].First_name%> <%=data_s2[0].Last_name%></h2>
         <h3>BE-III CSE</h3>
         <br /><br />
         <h2>Notifications</h2>

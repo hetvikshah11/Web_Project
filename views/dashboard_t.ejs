@@ -39,7 +39,7 @@
                 </div>
                 <div id="settings" onclick="menu_click()">
                     <ion-icon name="settings-outline"></ion-icon> &nbsp
-                    Settings
+                    Assignment
                 </div>
             </div>
         </div>
@@ -127,7 +127,30 @@
                     <button type="submit" class="submit">Submit Marks</button>
                 </form>
             </div>
-            <div id="settings_content">In settings</div>
+            <div id="settings_content">
+                <div>
+                    <h2 style="text-align:center ;">Notes</h2>
+                    <div>
+                        <h3 style="display:inline ;">Upload material</h3>
+                        <button id="upload_widget2" class="cloudinary-button">Upload files</button>
+                       
+                        <table id="assignment_table">
+                            <tr>
+                                <th>Filename</th>
+                                <th>Link</th>
+                            </tr>
+                            <% for(let i in assignment) {%>
+                                <tr>
+                                    <td >
+                                        <%=assignment[i].File_name%>
+                                    </td>
+                                      <td><a href="<%=assignment[i].URL%>" target="_blank">Open File</a> </td>
+                                </tr>
+                                <% } %>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col3">
             <div>
@@ -167,7 +190,7 @@
 
     <script type="text/javascript">
        
-        const material_table = document.getElementById("material_table");
+      
         var myWidget = cloudinary.createUploadWidget({
             cloudName: 'dedseoasc',
             uploadPreset: 'abyxzsh3'
@@ -202,6 +225,57 @@
         body: JSON.stringify(data)
     }
     const promise = fetch('/material', options);
+    promise.then(response => {
+        if(!response.ok){
+            console.error(response)
+        } else {
+            return response.json();
+        }
+    }).then(result => {
+        console.log(result);
+    })
+}
+    </script>
+<!-- /////////////////////////////////////////////////////// -->
+
+
+    <script type="text/javascript">
+       
+      
+        var myWidget = cloudinary.createUploadWidget({
+            cloudName: 'dedseoasc',
+            uploadPreset: 'abyxzsh3'
+        }, (error, result) => {
+            if (!error && result && result.event === "success") {
+                console.log('Done! Here is the image info: ', result.info);
+                console.log(result.info.secure_url)
+                
+                sendData(result.info.secure_url,result.info.original_filename)
+                alert("Data uploaded succesfully")
+
+
+
+            }
+        }
+        )
+
+        document.getElementById("upload_widget2").addEventListener("click", function () {
+            myWidget.open();
+        }, false);
+        function sendData(link,filename){
+    
+    let data = {
+        URL: link,
+        File_name:filename
+    }
+    let options = {
+        method: 'POST',
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        },
+        body: JSON.stringify(data)
+    }
+    const promise = fetch('/assignment', options);
     promise.then(response => {
         if(!response.ok){
             console.error(response)

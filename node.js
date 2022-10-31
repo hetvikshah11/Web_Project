@@ -48,7 +48,9 @@ app.get('/dashboard_s', middleware, async (req, res) => {
     let material=await connection.getAllMaterial()
     material=JSON.parse(material);
     // data=JSON.parse(data);
-    res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s), material });
+    let assignment=await connection.getAllAssignment()
+    assignment=JSON.parse(assignment);
+    res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s), material,assignment });
 })
 
 app.get("/dashboard_t", async (req, res) => {
@@ -56,7 +58,9 @@ app.get("/dashboard_t", async (req, res) => {
     let data_s = await connection.getStudentData({})
     let material=await connection.getMaterial(await connection.getSubjectName(req.session.user_id))
     material=JSON.parse(material);
-    res.render("dashboard_t", { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s),material });
+    let assignment=await connection.getAssignment(await connection.getSubjectName(req.session.user_id))
+    assignment=JSON.parse(assignment);
+    res.render("dashboard_t", { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s),material,assignment});
 })
 
 app.post('/register', async (req, res) => {
@@ -99,7 +103,9 @@ app.post('/login', async (req, res) => {
         console.log(req.session.user_id);
         let material=await connection.getAllMaterial()
     material=JSON.parse(material);
-        res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s), material });
+    let assignment=await connection.getAllAssignment()
+    assignment=JSON.parse(assignment);
+        res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s), material,assignment });
     }
     else {
         const tAvailable = await connection.teacherAvailable(email, password);
@@ -111,7 +117,9 @@ app.post('/login', async (req, res) => {
             console.log(req.session.user_id);
             let material=await connection.getMaterial(await connection.getSubjectName(req.session.user_id));
             material=JSON.parse(material);
-            res.render('dashboard_t', { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s),material })
+            let assignment=await connection.getAssignment(await connection.getSubjectName(req.session.user_id))
+           assignment=JSON.parse(assignment);
+            res.render('dashboard_t', { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s),material,assignment })
         }
         else {
             res.send("No such user found");
@@ -191,6 +199,15 @@ app.post('/material', async (req, res) => {
     const name=req.body.File_name;
     console.log(link);
    await connection.insertMaterial(subject,link,name);
+    res.redirect('/dashboard_t');
+})
+
+app.post('/assignment', async (req, res) => {
+    const subject = await connection.getSubjectName(req.session.user_id);
+    const link=req.body.URL;
+    const name=req.body.File_name;
+    console.log(link);
+   await connection.uploadAssignment(subject,link,name);
     res.redirect('/dashboard_t');
 })
 
