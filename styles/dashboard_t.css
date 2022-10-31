@@ -1,7 +1,7 @@
 body {
   background-color: #023e8a;
   padding: 10px;
-  font-family: "Arial";
+  font-family: sans-serif;
   box-sizing: border-box;
 }
 
@@ -115,10 +115,11 @@ th {
 }
 
 .col3 > div {
+  height: 100%;
   width: 80%;
   padding: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   background-color: white;
@@ -269,8 +270,9 @@ th {
 #settings_content {
   display: none;
 }
-.submit {
-  width: 100%;
+.submit,
+#upload_pic {
+  width: 60%;
   border: 0;
   background-color: #00b4d8;
   color: white;
@@ -278,10 +280,19 @@ th {
   border-radius: 10px;
   font-size: large;
 }
-/* .s_id{
+#upload_pic {
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px;
+  width: 80%;
+  cursor: pointer;
+}
+#upload_pic:hover {
+  background-color: #2e9bb1;
+}
+.s_id {
   display: none;
-  
-} */
+}
 .lec_taken,
 .total_lec {
   text-align: center;
@@ -302,4 +313,79 @@ th {
 .total_lec p {
   font-size: 46px;
   font-weight: 600;
+}
+#attendance_form,
+#grades_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+  max-height: 400px;
+}
+#attendance_form button {
+  font-size: 20px;
+  width: 40%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#attendance_form button:hover {
+  background-color: #bbb;
+
+  /* color: white; */
+}
+#attendance_content,
+#notes_content,
+#assignment_content,
+#grades_content {
+  height: 100%;
+  width: 80%;
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px 50px;
+}
+
+#attendance_table,
+#material_table,
+#assignment_table,
+#grades_table {
+  width: 100%;
+  margin-top: 20px;
+  /* border-collapse: separate; */
+  font-size: 20px;
+  align-items: center;
+}
+.notes_div,
+.assignment_div {
+  overflow: auto;
+  height: 400px;
+}
+.row .cell:nth-child(3) {
+  display: none;
+}
+#attendance_table .first_row {
+  color: #fff;
+  background: #6c7ae0;
+  font-size: 24px;
+}
+#attendance_table tr:hover {
+  background-color: #ececff;
+  cursor: pointer;
+}
+
+#upload_widget2,
+#upload_widget {
+  padding: 2px 5px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 20px;
+  font-size: 15px;
+}
+#grades_table table td input {
+  width: 100%;
 }
