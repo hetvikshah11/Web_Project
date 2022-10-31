@@ -180,7 +180,8 @@ app.post('/attendance', async (req, res) => {
             }
         }
     }
-    
+     res.redirect('/dashboard_t')
+
 
 })
 
