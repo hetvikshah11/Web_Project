@@ -18,7 +18,8 @@ module.exports.createSchema = async () => {
   })
   const Grades = new mongoose.Schema({
     Subject_name: String,
-    Marks: Number
+    Marks: Number,
+    Date: String
   })
 
   const material_schema=new mongoose.Schema({
@@ -95,7 +96,8 @@ module.exports.createSchema = async () => {
       type: Number
     },
     Lecture_Conducted: {
-      type: Number
+      type: Number,
+      default: 0
     },
     Img_url: {
       type: String
@@ -270,7 +272,7 @@ module.exports.addGrades = async (subject, marks, id) => {
     var data = await Student.updateOne({ _id: id[i] }, {
       $push: {
         "Marks": {
-          Subject_name: subject, Marks: marks[i]
+          Subject_name: subject, Marks: marks[i], Date: Date()
         }
       }
     })
@@ -311,4 +313,19 @@ module.exports.insertMaterial = async (subject,link,name) => {
 module.exports.getMaterial=async(subject)=>{
   let result=await Material.find({Subject_name:subject});
   return JSON.stringify(result);
+}
+
+module.exports.getAllMaterial=async()=>{
+  let result=await Material.find({});
+  return JSON.stringify(result);
+}
+
+module.exports.addLectureConducted = async(id) => {
+  let result = await Teacher.findOne({_id:id})
+  let conducted = result.Lecture_Conducted + 1
+  await Teacher.updateOne({_id:id},{$set:{
+    'Lecture_Conducted':conducted
+  }});
+  let subjectname = result.Subject_name;
+  let res = await Student.updateMany({'Total_Lecture.Subject_name':subjectname},{$set:{'Total_Lecture.$.No_of_lec':conducted}})
 }

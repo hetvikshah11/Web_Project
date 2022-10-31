@@ -188,3 +188,9 @@ a {
   width: 100%;
   color: white;
 }
+
+#material_table a{
+  color: blue;
+  text-decoration: underline;
+
+}

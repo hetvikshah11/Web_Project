@@ -85,17 +85,35 @@
             <tr>
               <th>Subject Name</th>
               <th>Marks(out of 100)</th>
+              <th>Date/Time</th>
             </tr>
             <% for(let data in data_s2[0]["Marks"]) {%>
               <tr>
                 <td><%=data_s2[0]["Marks"][data]["Subject_name"]%></td>
                 <td><%=data_s2[0]["Marks"][data]["Marks"]%></td>
+                <td><%=data_s2[0]["Marks"][data]["Date"]%></td>
               </tr>
             <% } %>
           </table>
         </div>
         <div id="tasks_content">tasks</div>
-        <div id="materials_content">materials</div>
+        <div id="materials_content">
+          <h1>Displaying the materials</h1>
+          <table id="material_table">
+            <tr>
+                <th>Filename</th>
+                <th>Link</th>
+            </tr>
+            <% for(let i in material) {%>
+                <tr>
+                    <td >
+                        <%=material[i].File_name%>
+                    </td>
+                      <td><a href="<%=material[i].URL%>" target="_blank">Open File</a> </td>
+                </tr>
+                <% } %>
+        </table>
+        </div>
         <div id="settings_content">settings</div>
       </div>
 

@@ -45,8 +45,10 @@ app.get('/', (req, res) => {
 
 app.get('/dashboard_s', middleware, async (req, res) => {
     let data_s = await connection.getData(req.session.user_id);
+    let material=await connection.getAllMaterial()
+    material=JSON.parse(material);
     // data=JSON.parse(data);
-    res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s) });
+    res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s), material });
 })
 
 app.get("/dashboard_t", async (req, res) => {
@@ -95,7 +97,9 @@ app.post('/login', async (req, res) => {
         const result = JSON.parse(await connection.StudentId(email));
         req.session.user_id = result["_id"];
         console.log(req.session.user_id);
-        res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s) });
+        let material=await connection.getAllMaterial()
+    material=JSON.parse(material);
+        res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s), material });
     }
     else {
         const tAvailable = await connection.teacherAvailable(email, password);
@@ -145,6 +149,7 @@ app.post('/grades', async (req, res) => {
 })
 
 app.post('/attendance', async (req, res) => {
+    await connection.addLectureConducted(req.session.user_id)
     const ifattended = req.body.attended;
     const id = req.body.id;
     // const subject = await connection.getSubjectName(req.session.user_id);/
@@ -175,6 +180,8 @@ app.post('/attendance', async (req, res) => {
             }
         }
     }
+    
+
 })
 
 app.post('/material', async (req, res) => {
