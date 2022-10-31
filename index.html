@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" />
+    <link rel="stylesheet" href="./styles/loader.css">
 </head>
 
 <body>
@@ -171,9 +172,21 @@
             </form>
         </div>
     </div>
+    <div class="loader"></div>
     <script src="../js/index.js"></script>
     <script src="../js/validating_login.js"></script>
     <script src="../js/validating_register.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+
+            loader.classList.add("loader--hidden");
+
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild(loader);
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles/dashboard_s.css" />
+    <link rel="stylesheet" href="../styles/loader.css">
 
     <script src="./js/menu_s.js"></script>
 
@@ -160,7 +161,20 @@
       </div>
     </div>
 
+    <div class="loader"></div>
+
     <p id="received_data" style="display: none"><%= data_s %></p>
     <script src="../js/dashboard_s.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+          const loader = document.querySelector(".loader");
+
+          loader.classList.add("loader--hidden");
+
+          loader.addEventListener("transitionend", () => {
+              document.body.removeChild(loader);
+          });
+      });
+  </script>
   </body>
 </html>
