@@ -1,3 +1,4 @@
+const home_img = document.getElementsByClassName("home_img_s");
 function menu_item() {
   var element = event.target;
   home.classList.remove("active");
@@ -15,21 +16,27 @@ function menu_item() {
   if (element.id == home.id) {
     home.classList.add("active");
     home_content.style.display = "flex";
+    home_img_s.style.display = "inline-block";
   } else if (element.id == courses.id) {
     courses.classList.add("active");
     courses_content.style.display = "flex";
+    home_img_s.style.display = "none";
   } else if (element.id == grades.id) {
     grades.classList.add("active");
     grades_content.style.display = "flex";
+    home_img_s.style.display = "none";
   } else if (element.id == tasks.id) {
     tasks.classList.add("active");
     tasks_content.style.display = "flex";
+    home_img_s.style.display = "none";
   } else if (element.id == materials.id) {
     materials.classList.add("active");
     materials_content.style.display = "flex";
+    home_img_s.style.display = "none";
   } else if (element.id == settings.id) {
     settings.classList.add("active");
     settings_content.style.display = "flex";
+    home_img_s.style.display = "none";
   }
 }
 

@@ -1,16 +1,18 @@
 body {
-  background-color: #023e8a;
-  padding: 10px;
+  /* background-color: #023e8a; */
+  /* padding: 10px; */
+  margin: 0;
   font-family: "Arial";
 }
 
 .outer {
-  background-color: #ade8f4;
+  /* background-color: #ade8f4; */
+  background-color: #ddd;
   width: 100%;
   box-sizing: border-box;
-  height: 100%;
-  border-radius: 30px;
-  padding: 20px;
+  height: 100vh;
+  /* border-radius: 30px; */
+  /* padding: 20px; */
   display: flex;
 }
 
@@ -22,45 +24,58 @@ body {
 
 .col1 {
   width: 20%;
-  background-color: #fa5252;
+  /* background-color: #fa5252; */
+  background-color: #0ca678;
+  background-image: linear-gradient(to bottom right, #12b886, #15aabf);
   padding: 20px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  /* border-top-left-radius: 20px; */
+  /* border-bottom-left-radius: 20px; */
   color: white;
 }
 
 .menu_items div:hover {
-  color: #c92a2a;
+  /* color: #c92a2a; */
+  color: #0ca678;
   background-color: #eee;
   cursor: pointer;
 }
 
 .menu_items div.active {
-  background-color: #c92a2a;
+  background-color: #087f5b;
   color: #eee;
 }
 
 .active {
-  background-color: #c92a2a;
+  /* background-color: #c92a2a; */
+  background-color: #087f5b;
   color: #eee;
   border-radius: 30%;
 }
 
 .col2 {
   width: 60%;
-  background-color: #ddd;
+  /* background-color: #e6fcf5; */
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .col2_header {
-  background-color: white;
   width: 90%;
   margin: 0 20px;
   margin-top: 20px;
-  border-radius: 20px;
   padding-left: 10px;
-  border: 1px solid black;
+}
+.col2_header h1,
+.col2_header h2 {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 20px;
+}
+.col2_header h2 {
+  font-weight: 600;
+  font-size: 32px;
 }
 
 #courses_content,
@@ -115,25 +130,23 @@ body {
 
 .col3 {
   width: 20%;
-  background-color: #ddd;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  padding-right: 20px;
 }
 .col3_content {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
   /* justify-content: center; */
   align-items: center;
-  margin: 10px 5px;
-  padding: 5px;
+  margin: 28px 5px;
   border-radius: 20px;
-  height: 100%;
+  height: 92%;
   background-color: white;
-  width: 80%;
+  width: 95%;
 }
 .menu_items {
   display: flex;
@@ -149,7 +162,7 @@ body {
   width: 80%;
   margin: 7px;
   display: flex;
-  font-size: 24px;
+  font-size: 20px;
 
   border-radius: 20px;
   padding: 10px;
@@ -218,15 +231,26 @@ a {
 }
 #home_content {
   padding: 20px;
-  height: 100%;
+  height: 36%;
   width: 87%;
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin: 20px 20px;
+  margin: 0 20px;
+  margin-bottom: 20px;
   justify-content: flex-start;
   align-items: center;
   border-radius: 20px;
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
+}
+#home_img_s {
+  display: inline-block;
+  margin: 0 20px;
+  margin-bottom: 30px;
+  height: 35%;
+  width: 90%;
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
+  border-radius: 10px;
 }
 #courses_content,
 #grades_content,
@@ -237,8 +261,48 @@ a {
   width: 87%;
   flex-direction: column;
   background-color: white;
-  margin: 20px;
+  margin: 30px 20px;
+  margin-top: 0;
   justify-content: flex-start;
   align-items: center;
   border-radius: 20px;
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
+}
+.content_heading {
+  margin-top: 0;
+}
+#display_attendance,
+#display_marks,
+#tasks_table {
+  background-color: white;
+  /* background-image: linear-gradient(to bottom right, #25c28f, #24bab8); */
+  color: black;
+  border: none;
+  border-radius: 80px;
+  font-size: 16px;
+  width: 100%;
+}
+#display_attendance tr:nth-child(even),
+#display_marks tr:nth-child(even),
+#tasks_table tr:nth-child(even) {
+  background-color: #ddd;
+}
+#display_attendance tr:nth-child(odd),
+#display_marks tr:nth-child(odd),
+#tasks_table tr:nth-child(odd) {
+  background-color: white;
+}
+#display_attendance th,
+#display_marks th,
+#tasks_table th {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.726);
+  color: white;
+}
+#display_attendance td,
+#display_marks td,
+#tasks_table td {
+  border: none;
+  /* background-color: #c3fae8; */
+  color: black;
 }

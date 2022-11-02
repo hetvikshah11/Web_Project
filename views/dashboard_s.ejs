@@ -21,7 +21,7 @@
       <div class="col1">
         <img src="./images/logo.jpeg" id="logo" />
         <div class="menu_items">
-          <h1>MENU</h1>
+          <h2>MENU</h2>
           <div onclick="menu_item()" id="home" class="active">
             <ion-icon class="main-nav-icon" name="home-outline"></ion-icon>
             Home
@@ -55,12 +55,13 @@
 
       <div class="col2">
         <div class="col2_header">
-        <h1 id="welcome">Hello</h1>
-        <h2>Welcome Back</h2>
+          <h1>Welcome Back,</h1>
+        <h2 id="welcome"><%= data_s2[0]["First_name"] %>  <%=data_s2[0]["Last_name"]%> </h2>
       </div>
-        <br /><br /><br />
+        <br />
+         <img id="home_img_s" src="../images/student_home.png"/>
         <div id="home_content">
-          <h1>Displaying Attendance</h1>
+          <h2 class="content_heading">ATTENDANCE</h2>
           <table id="display_attendance">
             <tr>
               <th>Subject</th>
@@ -77,13 +78,15 @@
           </table>
         </div>
         <div id="courses_content">
-          <h1>You have been enrolled in the following subjects</h1>
+          <h2>ENROLLED SUBJECTS</h2>
+          <ul class="courses_list">
           <% for(let data in data_s2[0]["Lecture_Attended"]) {%>
-            <h3 class="courses_enrolled"><%= data_s2[0]["Lecture_Attended"][data]["Subject_name"]%></h3>
+            <li class="courses_enrolled"><%= data_s2[0]["Lecture_Attended"][data]["Subject_name"]%></li>
           <% } %>
+        </ul>
         </div>
         <div id="grades_content">
-          <h1>Your Marks are as below</h1>
+          <h2>YOUR MARKS</h2>
           <table id="display_marks">
             <tr>
               <th>Subject Name</th>
@@ -100,10 +103,13 @@
           </table>
         </div>
         <div id="tasks_content">
-          <table>
+          <h2>MY TASKS</h2>
+          <table id="tasks_table">
+           <tr>
             <th>Subject Name</th>
             <th>File Name</th>
             <th>Link</th>
+          </tr>
           <% for(let data in assignment) {%>
           <tr>
             <td><%=assignment[data]["Subject_name"]%></td>
@@ -114,7 +120,7 @@
         </table>
       </div>
         <div id="materials_content">
-          <h1>Displaying the materials</h1>
+          <h2>REFERENCE MATERIALS</h2>
           <table id="material_table">
             <tr>
                 <th>Filename</th>
