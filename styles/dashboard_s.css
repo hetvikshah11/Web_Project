@@ -48,10 +48,19 @@ body {
 
 .col2 {
   width: 60%;
-  background-color: #ffd5c2;
+  background-color: #ddd;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.col2_header {
+  background-color: white;
+  width: 90%;
+  margin: 0 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding-left: 10px;
+  border: 1px solid black;
 }
 
 #courses_content,
@@ -62,6 +71,7 @@ body {
 #settings_content {
   text-align: center;
   display: none;
+  flex-direction: column;
   width: 80%;
   justify-content: space-evenly;
 }
@@ -90,28 +100,41 @@ body {
   padding: 5px;
 }
 
-#display_attendance{
+#display_attendance {
   border-collapse: collapse;
   width: 90%;
   border: 2px solid black;
   text-align: center;
 }
 
-#display_attendance td,#display_attendance th{
+#display_attendance td,
+#display_attendance th {
   border: 2px solid black;
   padding: 5px;
 }
 
 .col3 {
   width: 20%;
-  background-color: #9c36;
+  background-color: #ddd;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-
+.col3_content {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 10px 5px;
+  padding: 5px;
+  border-radius: 20px;
+  height: 100%;
+  background-color: white;
+  width: 80%;
+}
 .menu_items {
   display: flex;
   flex-direction: column;
@@ -189,7 +212,33 @@ a {
   color: white;
 }
 
-#material_table a{
+#material_table a {
   color: blue;
   text-decoration: underline;
+}
+#home_content {
+  padding: 20px;
+  height: 100%;
+  width: 87%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px 20px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+}
+#courses_content,
+#grades_content,
+#tasks_content,
+#materials_content {
+  padding: 20px;
+  height: 100%;
+  width: 87%;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
 }

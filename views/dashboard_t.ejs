@@ -33,7 +33,7 @@
             <ion-icon name="school-outline"></ion-icon> &nbsp Grades
           </div>
           <div id="assignment" onclick="menu_click()">
-            <ion-icon name="settings-outline"></ion-icon> &nbsp Assignment
+            <ion-icon name="reader-outline"></ion-icon> &nbsp Assignment
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
                   
         </div>
         <div id="attendance_content">
-          <h2>Attendance List</h2>
+          <h2>ATTENDANCE LIST</h2>
           <form id="attendance_form" action="/attendance" method="post">
             <table id="attendance_table">
               <tr class="first_row row">
@@ -87,8 +87,8 @@
           </form>
         </div>
         <div id="notes_content">
-          <div>
-            <h2 style="text-align: center">Notes</h2>
+          <div >
+            <h2 style="text-align: center">NOTES</h2>
             <div>
               <h3 style="display: inline">Upload material</h3>
               <button id="upload_widget" class="cloudinary-button">
@@ -96,7 +96,7 @@
               </button>
 <div class="notes_div">
               <table id="material_table">
-                <tr>
+                <tr class="first_row">
                   <th>Filename</th>
                   <th>Link</th>
                 </tr>
@@ -104,7 +104,7 @@
                 <tr>
                   <td><%=material[i].File_name%></td>
                   <td>
-                    <a href="<%=material[i].URL%>" target="_blank">Open File</a>
+                    <a href="<%=material[i].URL%>" target="_blank">Open File <ion-icon name="link-outline"></ion-icon></a>
                   </td>
                 </tr>
                 <% } %>
@@ -115,10 +115,10 @@
         </div>
        
         <div id="grades_content">
-          <h2>Enter Student Marks</h2>
+          <h2>ENTER STUDENT MARKS</h2>
           <form id="grades_form" action="/grades" method="post">
             <table id="grades_table">
-              <tr>
+              <tr class="first_row">
                 <th>Name of Student</th>
                 <th>Marks</th>
               </tr>
@@ -153,7 +153,7 @@
         </div>
         <div id="assignment_content">
           <div>
-            <h2 style="text-align: center">Assignments</h2>
+            <h2 style="text-align: center">ASSIGNMENTS</h2>
             <div>
               <h3 style="display: inline">Upload material</h3>
               <button id="upload_widget2" class="cloudinary-button">
@@ -161,7 +161,7 @@
               </button>
 <div class="assignment_div">
               <table id="assignment_table">
-                <tr>
+                <tr class="first_row">
                   <th>Filename</th>
                   <th>Link</th>
                 </tr>

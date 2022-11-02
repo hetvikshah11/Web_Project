@@ -134,8 +134,13 @@ app.post("/login", async (req, res) => {
     material = JSON.parse(material);
     let assignment = await connection.getAllAssignment();
     assignment = JSON.parse(assignment);
-    // res.render('dashboard_s', { data_s, data_s2: JSON.parse(data_s), material,assignment });
-    res.redirect("/dashboard_s");
+    res.render("dashboard_s", {
+      data_s,
+      data_s2: JSON.parse(data_s),
+      material,
+      assignment,
+    });
+    // res.redirect("/dashboard_s");
   } else {
     const tAvailable = await connection.teacherAvailable(email, password);
     if (tAvailable) {
@@ -155,8 +160,15 @@ app.post("/login", async (req, res) => {
         await connection.getSubjectName(req.session.user_id)
       );
       assignment = JSON.parse(assignment);
-      res.redirect("/dashboard_t");
-      // res.render('dashboard_t', { data_t, data_s, data_t2: JSON.parse(data_t), data_s2: JSON.parse(data_s),material,assignment })
+      // res.redirect("/dashboard_t");
+      res.render("dashboard_t", {
+        data_t,
+        data_s,
+        data_t2: JSON.parse(data_t),
+        data_s2: JSON.parse(data_s),
+        material,
+        assignment,
+      });
     } else {
       res.send("No such user found");
     }
