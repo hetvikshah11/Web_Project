@@ -19,7 +19,7 @@
       <div class="col1">
         <img src="../images/logo.jpeg" id="logo" />
         <div class="menu_items">
-          <h1>MENU</h1>
+          <h2>MENU</h2>
           <div id="home" onclick="menu_click()" class="active">
             <ion-icon name="home-outline"></ion-icon> &nbsp Home
           </div>
@@ -38,10 +38,10 @@
         </div>
       </div>
       <div class="col2">
-        <div class="col2-header">
-          <h1 id="welcome">Hello &nbsp;<%=data_t2["First_name"]%></h1>
-          <h2>Welcome Back</h2>
-        </div>
+        <div class="col2_header">
+          <h1>Welcome Back,</h1>
+        <h2 id="welcome"><%= data_t2["First_name"] %>  <%=data_t2["Last_name"]%> </h2>
+      </div>
         <br />
         <div id="home_content">
           <div class="lec_taken">

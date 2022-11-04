@@ -160,15 +160,15 @@ app.post("/login", async (req, res) => {
         await connection.getSubjectName(req.session.user_id)
       );
       assignment = JSON.parse(assignment);
-      // res.redirect("/dashboard_t");
-      res.render("dashboard_t", {
-        data_t,
-        data_s,
-        data_t2: JSON.parse(data_t),
-        data_s2: JSON.parse(data_s),
-        material,
-        assignment,
-      });
+      res.redirect("/dashboard_t");
+      // res.render("dashboard_t", {
+      //   data_t,
+      //   data_s,
+      //   data_t2: JSON.parse(data_t),
+      //   data_s2: JSON.parse(data_s),
+      //   material,
+      //   assignment,
+      // });
     } else {
       res.send("No such user found");
     }

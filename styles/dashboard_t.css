@@ -1,23 +1,25 @@
 body {
-  background-color: #023e8a;
-  padding: 10px;
+  /* background-color: #023e8a;
+  padding: 10px; */
+  margin: 0;
   font-family: sans-serif;
   box-sizing: border-box;
 }
 
 .outer {
-  background-color: #ade8f4;
+  background-color: #ddd;
   width: 100%;
   box-sizing: border-box;
-  height: 100%;
-  border-radius: 30px;
+  height: 100vh;
+  /* border-radius: 30px; */
   padding: 20px;
   display: flex;
 }
 
 .col1 {
   width: 20%;
-  background-color: #5c7cfa;
+  /* background-color: #5c7cfa; */
+  background-image: linear-gradient(to bottom right, #15aabf, #5c7cfa);
   padding: 20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -53,20 +55,28 @@ body {
 
 .col2 {
   width: 60%;
-  background-color: lightgray;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.col2-header {
-  margin: 20px;
+.col2_header {
   width: 90%;
-  border-radius: 15px;
-  border: 2px solid #5c7cfa;
+  margin: 0 20px;
+  margin-top: 20px;
   padding-left: 10px;
-  color: #3452cd;
-  background-color: white;
+}
+.col2_header h1,
+.col2_header h2 {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 20px;
+}
+.col2_header h2 {
+  font-weight: 600;
+  font-size: 32px;
 }
 
 #grades_content {
@@ -99,14 +109,9 @@ table {
   margin: auto;
 }
 
-td,
-th {
-  padding: 5px;
-}
-
 .col3 {
   width: 20%;
-  background-color: lightgrey;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,9 +128,9 @@ th {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 10px 5px;
+  border-radius: 20px;
+  margin: 28px 5px;
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
 }
 
 .menu_items {
@@ -137,12 +142,19 @@ th {
   justify-content: space-evenly;
   align-items: center;
 }
+/* #home,
+#attendance,
+#grades,
+#notes,
+#assignment {
+  transition: all 0.09s linear;
+} */
 
 .menu_items div {
   width: 80%;
   margin: 7px;
   display: flex;
-  font-size: 24px;
+  font-size: 20px;
   border-radius: 20px;
   padding: 10px;
 }
@@ -250,6 +262,7 @@ th {
   display: flex;
   justify-content: space-evenly;
   width: 95%;
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
 }
 
 #notes_content {
@@ -332,23 +345,25 @@ th {
 }
 #attendance_form button:hover {
   background-color: #bbb;
-
   /* color: white; */
 }
 #attendance_content,
 #notes_content,
 #assignment_content,
 #grades_content {
-  height: 400px;
+  height: 100%;
   width: 80%;
   display: none;
   flex-direction: column;
   background-color: white;
-  margin: 20px;
+  margin: 30px 20px;
+  margin-left: 45px;
+  margin-top: 0;
   justify-content: flex-start;
   align-items: center;
   border-radius: 20px;
   padding: 20px 50px;
+  box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
 }
 #notes_content div,
 #assignment_content div {
@@ -361,9 +376,40 @@ th {
 #grades_table {
   width: 100%;
   margin-top: 20px;
-  /* border-collapse: separate; */
-  font-size: 18px;
+  border: none;
+  font-size: 16px;
   align-items: center;
+  text-align: center;
+}
+#attendance_table tr:nth-child(even),
+#material_table tr:nth-child(even),
+#assignment_table tr:nth-child(even),
+#grades_table tr:nth-child(even) {
+  background-color: #ddd;
+}
+#attendance_table tr:nth-child(odd),
+#material_table tr:nth-child(odd),
+#assignment_table tr:nth-child(odd),
+#grades_table tr:nth-child(odd) {
+  background-color: white;
+}
+#attendance_table th,
+#material_table th,
+#assignment_table th,
+#grades_table th {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.726);
+  color: white;
+  padding: 5px;
+}
+#attendance_table td,
+#material_table td,
+#assignment_table td,
+#grades_table td {
+  border: none;
+  /* background-color: #c3fae8; */
+  color: black;
+  padding: 5px;
 }
 #material_table a:link,
 #material_table a:active,
@@ -383,7 +429,7 @@ th {
 .notes_div,
 .assignment_div {
   overflow: auto;
-  height: 300px;
+  height: 400px;
 }
 .row .cell:nth-child(3) {
   display: none;
@@ -394,16 +440,16 @@ th {
 #grades_table .first_row {
   color: #fff;
   /* background: #6c7ae0; */
-  background-color: #51cf66;
+  /* background-color: #51cf66; */
   font-size: 20px;
 }
 #attendance_table .first_row:hover {
-  background: #51cf66;
+  /* background: #51cf66; */
 }
-#attendance_table tr:hover {
+/* #attendance_table tr:hover {
   background-color: #ececff;
   cursor: pointer;
-}
+} */
 
 #upload_widget2,
 #upload_widget {
