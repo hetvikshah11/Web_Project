@@ -8,7 +8,9 @@ const multer = require("multer");
 const storage = require("./cloudinary");
 const upload = multer({ storage: storage });
 
+const flash=require('connect-flash')
 app.use(session({ secret: "Not a good secret" }));
+app.use(flash());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -65,6 +67,7 @@ app.get("/dashboard_t", async (req, res) => {
   );
   assignment = JSON.parse(assignment);
   res.render("dashboard_t", {
+    message :req.flash('success'),
     data_t,
     data_s,
     data_t2: JSON.parse(data_t),
@@ -205,6 +208,8 @@ app.post("/grades", async (req, res) => {
   const id = req.body.id;
   const subject = await connection.getSubjectName(req.session.user_id);
   await connection.addGrades(subject, marks, id);
+  req.flash('success','Marks updated Successfully');
+  
   res.redirect("/dashboard_t");
 });
 
@@ -235,7 +240,11 @@ app.post("/attendance", async (req, res) => {
       }
     }
   }
+ 
+  req.flash('success','Attendance taken Successfully');
   res.redirect("/dashboard_t");
+
+
 });
 
 app.post("/material", async (req, res) => {
@@ -244,6 +253,7 @@ app.post("/material", async (req, res) => {
   const name = req.body.File_name;
   // console.log(link);
   await connection.insertMaterial(subject, link, name);
+  req.flash('success','Material uploaded Successfully');
   res.redirect("/dashboard_t");
 });
 
@@ -253,6 +263,7 @@ app.post("/assignment", async (req, res) => {
   const name = req.body.File_name;
   // console.log(link);
   await connection.uploadAssignment(subject, link, name);
+  req.flash('success','Assignment uploaded Successfully');
   res.redirect("/dashboard_t");
 });
 

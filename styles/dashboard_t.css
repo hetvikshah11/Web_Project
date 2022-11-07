@@ -269,19 +269,6 @@ table {
   overflow: auto;
 }
 
-#notes_content {
-
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  margin: 20px;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: 20px;
-
-
-}
 
 #grades_content,
 #attendance_content,
@@ -370,7 +357,7 @@ table {
   border-radius: 20px;
   padding: 20px 50px;
   box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
-  height: 80%;
+  height: 75%;
  box-sizing: border-box;
 
 }
@@ -442,8 +429,9 @@ table {
 .notes_div,
 .assignment_div {
   overflow: auto;
-  height: 300px;
+  height: 60%;
 }
+
 .row .cell:nth-child(3) {
   display: none;
 }
@@ -474,4 +462,20 @@ table {
 }
 #grades_table tr td input {
   width: 90%;
+}
+.flex_class{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.alert {
+  width: 80%;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  padding: 4px;
+  margin: 0px;
+  box-sizing: border-box;
+  margin: 5px;
+  height: 5%;
 }

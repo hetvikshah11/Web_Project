@@ -25,18 +25,26 @@ function menu_click() {
   if (element.id == home.id) {
     home.classList.add("active");
     home_content.style.display = "flex";
+    // home_content.classList.add('flex_class');
   } else if (element.id == attendance.id) {
     attendance.classList.add("active");
     attendance_content.style.display = "flex";
+    attendance_content.classList.add('flex_class');
   } else if (element.id == notes.id) {
     notes.classList.add("active");
     notes_content.style.display = "flex";
+    notes_content.classList.add('flex_class');
+    
   } else if (element.id == grades.id) {
     grades.classList.add("active");
     grades_content.style.display = "flex";
+    grades_content.classList.add('flex_class');
+
   } else if (element.id == assignment.id) {
     assignment.classList.add("active");
     assignment_content.style.display = "flex";
+    assignment_content.classList.add('flex_class');
+
   }
 }
 
