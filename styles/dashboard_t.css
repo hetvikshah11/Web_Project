@@ -343,7 +343,8 @@ table {
 #attendance_content,
 #notes_content,
 #assignment_content,
-#grades_content {
+#grades_content,
+#settings_content{
 
   width: 90%;
   display: none;

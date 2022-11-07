@@ -1,5 +1,11 @@
 const home_img = document.getElementsByClassName("home_img_s");
 function menu_item() {
+  let home = document.getElementById('home')
+  let courses = document.getElementById('courses')
+  let grades = document.getElementById('grades')
+  let tasks = document.getElementById('tasks')
+  let materials = document.getElementById('materials')
+  let settings = document.getElementById('settings')
   var element = event.target;
   home.classList.remove("active");
   courses.classList.remove("active");

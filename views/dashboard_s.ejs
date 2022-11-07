@@ -134,7 +134,18 @@
                 <% } %>
         </table>
         </div>
-        <div id="settings_content">settings</div>
+        <div id="settings_content">
+          <form action="/settings">
+            <h1>Settings</h1>
+            <label for="EPass">Existing Password</label>
+            <input type="password" name="EPass" id="EPass">
+            <br><br>
+            <label for="NPass">New Password</label>
+            <input type="password" name="EPass" id="NPass">
+            <br><br>
+            <button type="submit">Save Changes</button>
+          </form>
+        </div>
       </div>
 
       <div class="col3">
