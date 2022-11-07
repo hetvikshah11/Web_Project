@@ -4,13 +4,14 @@ body {
   margin: 0;
   font-family: sans-serif;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 .outer {
   background-color: #ddd;
   width: 100%;
   box-sizing: border-box;
-  height: 100vh;
+  height: 100%;
   /* border-radius: 30px; */
   padding: 20px;
   display: flex;
@@ -263,6 +264,7 @@ table {
   justify-content: space-evenly;
   width: 95%;
   box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
+  overflow: auto;
 }
 
 #notes_content {
@@ -275,6 +277,8 @@ table {
   justify-content: flex-start;
   align-items: center;
   border-radius: 20px;
+
+
 }
 
 #grades_content,
@@ -364,6 +368,8 @@ table {
   border-radius: 20px;
   padding: 20px 50px;
   box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
+ 
+
 }
 #notes_content div,
 #assignment_content div {
@@ -429,7 +435,7 @@ table {
 .notes_div,
 .assignment_div {
   overflow: auto;
-  height: 400px;
+  height: 300px;
 }
 .row .cell:nth-child(3) {
   display: none;

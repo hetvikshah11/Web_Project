@@ -132,6 +132,7 @@ body {
 #materials_content {
   padding: 20px;
   height: 100%;
+  overflow: auto;
   width: 87%;
   flex-direction: column;
   background-color: white;
