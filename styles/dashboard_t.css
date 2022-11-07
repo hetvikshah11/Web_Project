@@ -268,7 +268,7 @@ table {
 }
 
 #notes_content {
-  height: 100%;
+
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -355,7 +355,7 @@ table {
 #notes_content,
 #assignment_content,
 #grades_content {
-  height: 100%;
+
   width: 80%;
   display: none;
   flex-direction: column;
@@ -368,6 +368,7 @@ table {
   border-radius: 20px;
   padding: 20px 50px;
   box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
+  height: 80%;
  
 
 }

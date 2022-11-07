@@ -55,7 +55,10 @@
                   
         </div>
         <div id="attendance_content">
+        <div style="height:15% ;">
           <h2>ATTENDANCE LIST</h2>
+        </div>
+         <div style="height:80% ;width: 100%;">
           <form id="attendance_form" action="/attendance" method="post">
             <table id="attendance_table">
               <tr class="first_row row">
@@ -123,16 +126,19 @@
             <br />
             <button class="submit" type="submit">Save Data</button>
           </form>
+         </div>
         </div>
-        <div id="notes_content">
-          <div >
+        <div id="notes_content" >
+          <div style="height:10% ;">
             <h2 style="text-align: center">NOTES</h2>
             <div>
-              <h3 style="display: inline">Upload material</h3>
+              <div style="height:10% ;">
+                <h3 style="display: inline">Upload material</h3>
               <button id="upload_widget" class="cloudinary-button">
                 Upload files
               </button>
-<div class="notes_div">
+              </div style="height:80% ;">
+<div class="notes_div" >
               <table id="material_table">
                 <tr class="first_row">
                   <th>Filename</th>
