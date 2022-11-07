@@ -354,3 +354,10 @@ module.exports.addLectureConducted = async(id) => {
   let subjectname = result.Subject_name;
   let res = await Student.updateMany({'Total_Lecture.Subject_name':subjectname},{$set:{'Total_Lecture.$.No_of_lec':conducted}})
 }
+
+
+module.exports.getAllStudentData = async () => {
+  const sdata = await Student.find();
+  const studentdata = JSON.stringify(sdata);
+  return studentdata;
+}

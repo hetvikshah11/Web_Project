@@ -81,6 +81,44 @@
                 </td>
               </tr>
               <% } %>
+
+              <% for(let data in data_s2) {%>
+                <tr class="row">
+                  <td class="cell">
+                    <%=data_s2[data].First_name%> <%=data_s2[data].Last_name%>
+                  </td>
+                  <td class="cell">
+                    <input
+                      type="checkbox"
+                      id="<%=data_s2[data]._id%>"
+                      name="attended"
+                      value="<%=data_s2[data]._id%>"
+                    />
+                  </td class="cell">
+                  <td class="s_id cell">
+                    <input name="id" value="<%=data_s2[data]._id%>" />
+                  </td>
+                </tr>
+                <% } %>
+
+                <% for(let data in data_s2) {%>
+                  <tr class="row">
+                    <td class="cell">
+                      <%=data_s2[data].First_name%> <%=data_s2[data].Last_name%>
+                    </td>
+                    <td class="cell">
+                      <input
+                        type="checkbox"
+                        id="<%=data_s2[data]._id%>"
+                        name="attended"
+                        value="<%=data_s2[data]._id%>"
+                      />
+                    </td class="cell">
+                    <td class="s_id cell">
+                      <input name="id" value="<%=data_s2[data]._id%>" />
+                    </td>
+                  </tr>
+                  <% } %>
             </table>
             <br />
             <button class="submit" type="submit">Save Data</button>

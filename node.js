@@ -55,7 +55,7 @@ app.get("/dashboard_s", middleware, async (req, res) => {
 
 app.get("/dashboard_t", async (req, res) => {
   let data_t = await connection.getData(req.session.user_id);
-  let data_s = await connection.getStudentData({});
+  let data_s = await connection.getAllStudentData();
   let material = await connection.getMaterial(
     await connection.getSubjectName(req.session.user_id)
   );
@@ -148,7 +148,7 @@ app.post("/login", async (req, res) => {
         Email: email,
         Password: password,
       });
-      let data_s = await connection.getStudentData({});
+      let data_s = await connection.getAllStudentData();
       const result = JSON.parse(await connection.TeacherId(email));
       req.session.user_id = result["_id"];
       // console.log(req.session.user_id);
