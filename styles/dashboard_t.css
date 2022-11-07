@@ -60,10 +60,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap:10px
 }
 
 .col2_header {
   width: 90%;
+  height: 20%;
   margin: 0 20px;
   margin-top: 20px;
   padding-left: 10px;
@@ -338,7 +340,7 @@ table {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  overflow: auto;
+  
   max-height: 400px;
 }
 #attendance_form button {
@@ -356,12 +358,12 @@ table {
 #assignment_content,
 #grades_content {
 
-  width: 80%;
+  width: 90%;
   display: none;
   flex-direction: column;
   background-color: white;
   margin: 30px 20px;
-  margin-left: 45px;
+  margin-left: 20px;
   margin-top: 0;
   justify-content: flex-start;
   align-items: center;
@@ -369,14 +371,18 @@ table {
   padding: 20px 50px;
   box-shadow: 0 1px 25px rgba(0, 0, 0, 0.167);
   height: 80%;
- 
+ box-sizing: border-box;
 
 }
 #notes_content div,
 #assignment_content div {
   width: 100%;
 }
-
+#attendance_div,#grades_div{
+  height: 80%;
+  overflow: auto;
+  width: 100%;
+}
 #attendance_table,
 #material_table,
 #assignment_table,
