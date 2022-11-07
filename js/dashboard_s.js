@@ -50,11 +50,11 @@ document.getElementById("filechooser").onmouseout = function () {
 let rdata = null;
 rdata = JSON.parse(document.getElementById("received_data").innerHTML);
 
-if (rdata[0].Img_url) {
+if (rdata.Img_url) {
   let pic = document.getElementById("profilepic");
   pic.style.width = "100%";
   pic.style.height = "100%";
-  pic.src = rdata[0].Img_url;
+  pic.src = rdata.Img_url;
 } else {
   let pic = document.getElementById("profilepic");
   pic.style.width = "50%";

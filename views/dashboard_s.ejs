@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="./styles/dashboard_s.css" />
     <link rel="stylesheet" href="../styles/loader.css">
 
-    <script src="./js/menu_s.js"></script>
-
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -56,7 +54,7 @@
       <div class="col2">
         <div class="col2_header">
           <h1>Welcome Back,</h1>
-        <h2 id="welcome"><%= data_s2[0]["First_name"] %>  <%=data_s2[0]["Last_name"]%> </h2>
+        <h2 id="welcome"><%= data_s2["First_name"] %>  <%=data_s2["Last_name"]%> </h2>
       </div>
         <br />
          <img id="home_img_s" src="../images/student_home.png"/>
@@ -68,11 +66,11 @@
               <th>Lectures_attended</th>
               <th>Total Lectures conducted</th>
             </tr>
-            <% for(let data in data_s2[0]["Lecture_Attended"]) {%>
+            <% for(let data in data_s2["Lecture_Attended"]) {%>
               <tr>
-                <td><%=data_s2[0]["Lecture_Attended"][data]["Subject_name"]%></td>
-                <td><%=data_s2[0]["Lecture_Attended"][data]["attended"]%></td>
-                <td><%=data_s2[0]["Total_Lecture"][data]["No_of_lec"]%></td>
+                <td><%=data_s2["Lecture_Attended"][data]["Subject_name"]%></td>
+                <td><%=data_s2["Lecture_Attended"][data]["attended"]%></td>
+                <td><%=data_s2["Total_Lecture"][data]["No_of_lec"]%></td>
               </tr>
             <% } %>
           </table>
@@ -80,8 +78,8 @@
         <div id="courses_content">
           <h2>ENROLLED SUBJECTS</h2>
           <ul class="courses_list">
-          <% for(let data in data_s2[0]["Lecture_Attended"]) {%>
-            <li class="courses_enrolled"><%= data_s2[0]["Lecture_Attended"][data]["Subject_name"]%></li>
+          <% for(let data in data_s2["Lecture_Attended"]) {%>
+            <li class="courses_enrolled"><%= data_s2["Lecture_Attended"][data]["Subject_name"]%></li>
           <% } %>
         </ul>
         </div>
@@ -93,11 +91,11 @@
               <th>Marks(out of 100)</th>
               <th>Date/Time</th>
             </tr>
-            <% for(let data in data_s2[0]["Marks"]) {%>
+            <% for(let data in data_s2["Marks"]) {%>
               <tr>
-                <td><%=data_s2[0]["Marks"][data]["Subject_name"]%></td>
-                <td><%=data_s2[0]["Marks"][data]["Marks"]%></td>
-                <td><%=data_s2[0]["Marks"][data]["Date"]%></td>
+                <td><%=data_s2["Marks"][data]["Subject_name"]%></td>
+                <td><%=data_s2["Marks"][data]["Marks"]%></td>
+                <td><%=data_s2["Marks"][data]["Date"]%></td>
               </tr>
             <% } %>
           </table>
@@ -159,9 +157,9 @@
           <button type="submit" id="upload_pic">Upload</button>
         </form>
         <br /><br />
-        <h2><%=data_s2[0].First_name%> <%=data_s2[0].Last_name%></h2>
+        <h2><%=data_s2.First_name%> <%=data_s2.Last_name%></h2>
         <h3>
-          <%=data_s2[0].Year%>
+          <%=data_s2.Year%>
         </h3>
         <br /><br />
         <!-- <h2>Notifications</h2>
