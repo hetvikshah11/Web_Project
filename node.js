@@ -264,7 +264,6 @@ app.post("/material", async (req, res) => {
   const name = req.body.File_name;
   // console.log(link);
   await connection.insertMaterial(subject, link, name);
-  req.flash('success','Material uploaded Successfully');
   res.redirect("/dashboard_t");
 });
 
@@ -274,7 +273,6 @@ app.post("/assignment", async (req, res) => {
   const name = req.body.File_name;
   // console.log(link);
   await connection.uploadAssignment(subject, link, name);
-  req.flash('success','Assignment uploaded Successfully');
   res.redirect("/dashboard_t");
 });
 
