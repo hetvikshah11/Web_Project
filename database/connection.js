@@ -365,15 +365,11 @@ module.exports.getAllStudentData = async () => {
 }
 
 module.exports.updatePass = async (Email, NPass) => {
-  const data = await Student.find({ Email: Email })
-  console.log(data)
-  // console.log(Object.keys(data).length)
-  if (Object.keys(data).length === 0) {
-    await Teacher.updateOne({ 'Email': Email }, { $set: { 'Password': NPass } })
-    console.log('Teacher Updated')
+  const data = await Student.findOne({ Email: Email })
+  if (!data) {
+    await Teacher.updateOne({ Email: Email }, { $set: { Password: NPass } })
   }
   else {
-    await Student.updateOne({ 'Email': Email }, { $set: {'Password': NPass } })
-    console.log('Student Updated')
+    await Student.updateOne({ Email: Email }, { $set: {Password: NPass } })
   }
 }
