@@ -33,6 +33,10 @@
         <div id="assignment" onclick="menu_click()">
           <ion-icon name="reader-outline"></ion-icon> &nbsp Assignment
         </div>
+        <div id="settings" onclick="menu_click()">
+          <ion-icon class="main-nav-icon" name="settings-outline"></ion-icon>
+          Settings
+        </div>
       </div>
     </div>
     <div class="col2">
@@ -187,6 +191,19 @@
               </table>
             </div>
           </div>
+          <div id="settings_content">
+            Hello
+            <form action="/settings" method="post">
+              <h1>Settings</h1>
+              <label for="Email">Existing Password</label>
+              <input type="text" name="Email" id="Email" value="<%=data_t2.Email%>">
+              <br><br>
+              <label for="NPass">New Password</label>
+              <input type="password" name="NPass" id="NPass">
+              <br><br>
+              <button type="submit">Save Changes</button>
+            </form>
+          </div>
     </div>
     <div class="col3">
       <div>

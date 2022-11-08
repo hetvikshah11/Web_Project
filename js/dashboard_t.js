@@ -3,12 +3,14 @@ let grades = document.getElementById("grades");
 let attendance = document.getElementById("attendance");
 let notes = document.getElementById("notes");
 let assignment = document.getElementById("assignment");
+let settings = document.getElementById('settings')
 
 let home_content = document.getElementById("home_content");
 let attendance_content = document.getElementById("attendance_content");
 let notes_content = document.getElementById("notes_content");
 let grades_content = document.getElementById("grades_content");
 let assignment_content = document.getElementById("assignment_content");
+let settings_content = document.getElementById("settings_content");
 
 function menu_click() {
   var element = event.target;
@@ -17,11 +19,14 @@ function menu_click() {
   attendance.classList.remove("active");
   notes.classList.remove("active");
   assignment.classList.remove("active");
+  settings.classList.remove("active");
+  
   home_content.style.display = "none";
   attendance_content.style.display = "none";
   notes_content.style.display = "none";
   grades_content.style.display = "none";
   assignment_content.style.display = "none";
+  settings_content.style.display = "none";
   if (element.id == home.id) {
     home.classList.add("active");
     home_content.style.display = "flex";
@@ -45,7 +50,11 @@ function menu_click() {
     assignment_content.style.display = "flex";
     assignment_content.classList.add('flex_class');
 
-  }
+  } else if (element.id == settings.id) {
+    settings.classList.add("active");
+    settings_content.style.display = "flex";
+    settings_content.classList.add('flex_class');
+  }
 }
 
 document.getElementById("filechooser").onmouseover = function () {
