@@ -22,16 +22,16 @@ module.exports.createSchema = async () => {
     Date: String
   })
 
-  const material_schema=new mongoose.Schema({
-    Subject_name:String,
-    File_name:String,
-    URL:String
+  const material_schema = new mongoose.Schema({
+    Subject_name: String,
+    File_name: String,
+    URL: String
   })
   Material = mongoose.model('material', material_schema);
-  const assignment_schema=new mongoose.Schema({
-    Subject_name:String,
-    File_name:String,
-    URL:String
+  const assignment_schema = new mongoose.Schema({
+    Subject_name: String,
+    File_name: String,
+    URL: String
   })
   Assignment = mongoose.model('assignment', assignment_schema);
   const student_schema = new mongoose.Schema({
@@ -59,7 +59,7 @@ module.exports.createSchema = async () => {
       type: String,
       required: true
     },
-    Year:{
+    Year: {
       type: String
     },
     Total_Lecture: [lecture_info],
@@ -115,7 +115,7 @@ module.exports.createSchema = async () => {
 
 }
 
-module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, Email, Password,Year) => {
+module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, Email, Password, Year) => {
 
   let data = new Student({
     First_name: First_name,
@@ -124,7 +124,7 @@ module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, 
     Phone: Phone,
     Email: Email,
     Password: Password,
-    Year:Year
+    Year: Year
   })
   let result = await data.save();
   console.log(result);
@@ -288,71 +288,73 @@ module.exports.addGrades = async (subject, marks, id) => {
   }
 }
 
-module.exports.markAttendance = async(subject,id) => {
+module.exports.markAttendance = async (subject, id) => {
   console.log(id)
-  let data = await Student.findOne({_id:id})
+  let data = await Student.findOne({ _id: id })
   let result = data.Lecture_Attended
   // console.log(data.Lecture_Attended)
-  for(d in result)
-  {
-    if(result[d].Subject_name===subject)
-    {
+  for (d in result) {
+    if (result[d].Subject_name === subject) {
       let att = result[d].attended + 1
-      let res=await Student.updateOne({_id:id,'Lecture_Attended.Subject_name':subject},{$set:{
-        'Lecture_Attended.$.attended':att
-      }});
+      let res = await Student.updateOne({ _id: id, 'Lecture_Attended.Subject_name': subject }, {
+        $set: {
+          'Lecture_Attended.$.attended': att
+        }
+      });
       console.log(res);
     }
   }
 }
 
-module.exports.insertMaterial = async (subject,link,name) => {
+module.exports.insertMaterial = async (subject, link, name) => {
 
   let material = new Material({
-    Subject_name:subject,
-    File_name:name,
-    URL:link
+    Subject_name: subject,
+    File_name: name,
+    URL: link
   })
   let result = await material.save();
   console.log(result);
 
 };
-module.exports.uploadAssignment = async (subject,link,name) => {
+module.exports.uploadAssignment = async (subject, link, name) => {
 
   let assignment = new Assignment({
-    Subject_name:subject,
-    File_name:name,
-    URL:link
+    Subject_name: subject,
+    File_name: name,
+    URL: link
   })
   let result = await assignment.save();
   console.log(result);
 
 };
 
-module.exports.getMaterial=async(subject)=>{
-  let result=await Material.find({Subject_name:subject});
+module.exports.getMaterial = async (subject) => {
+  let result = await Material.find({ Subject_name: subject });
   return JSON.stringify(result);
 }
-module.exports.getAssignment=async(subject)=>{
-  let result=await Assignment.find({Subject_name:subject});
+module.exports.getAssignment = async (subject) => {
+  let result = await Assignment.find({ Subject_name: subject });
   return JSON.stringify(result);
 }
-module.exports.getAllMaterial=async()=>{
-  let result=await Material.find({});
+module.exports.getAllMaterial = async () => {
+  let result = await Material.find({});
   return JSON.stringify(result);
 }
-module.exports.getAllAssignment=async()=>{
-  let result=await Assignment.find({});
+module.exports.getAllAssignment = async () => {
+  let result = await Assignment.find({});
   return JSON.stringify(result);
 }
-module.exports.addLectureConducted = async(id) => {
-  let result = await Teacher.findOne({_id:id})
+module.exports.addLectureConducted = async (id) => {
+  let result = await Teacher.findOne({ _id: id })
   let conducted = result.Lecture_Conducted + 1
-  await Teacher.updateOne({_id:id},{$set:{
-    'Lecture_Conducted':conducted
-  }});
+  await Teacher.updateOne({ _id: id }, {
+    $set: {
+      'Lecture_Conducted': conducted
+    }
+  });
   let subjectname = result.Subject_name;
-  let res = await Student.updateMany({'Total_Lecture.Subject_name':subjectname},{$set:{'Total_Lecture.$.No_of_lec':conducted}})
+  let res = await Student.updateMany({ 'Total_Lecture.Subject_name': subjectname }, { $set: { 'Total_Lecture.$.No_of_lec': conducted } })
 }
 
 
@@ -360,4 +362,18 @@ module.exports.getAllStudentData = async () => {
   const sdata = await Student.find();
   const studentdata = JSON.stringify(sdata);
   return studentdata;
+}
+
+module.exports.updatePass = async (Email, NPass) => {
+  const data = await Student.find({ Email: Email })
+  console.log(data)
+  // console.log(Object.keys(data).length)
+  if (Object.keys(data).length === 0) {
+    await Teacher.updateOne({ 'Email': Email }, { $set: { 'Password': NPass } })
+    console.log('Teacher Updated')
+  }
+  else {
+    await Student.updateOne({ 'Email': Email }, { $set: {'Password': NPass } })
+    console.log('Student Updated')
+  }
 }

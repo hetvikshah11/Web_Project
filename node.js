@@ -80,7 +80,8 @@ app.get("/dashboard_t", async (req, res) => {
 app.post("/register", async (req, res) => {
   const First_name = req.body.fname;
   const Last_name = req.body.lname;
-  const Birth_date = req.body.birthdate + "";
+  const Birth_date = req.body.birthdate+"";
+  // console.log(Birth_date);
   const Phone = req.body.phone;
   const Email = req.body.register_email;
   const Password = req.body.register_password;
@@ -177,6 +178,16 @@ app.post("/login", async (req, res) => {
     }
   }
 });
+
+app.post("/settings", async (req, res) => {
+  const NPass = req.body.NPass;
+  const Email = req.body.Email;
+  const result = await connection.updatePass(Email,NPass);
+
+  // if(EPass)
+})
+
+
 app.post("/prof_pic", storage.parser.single("img"), async (req, res) => {
   const result = await connection.updateStudentProfPic(
     req.session.user_id,
