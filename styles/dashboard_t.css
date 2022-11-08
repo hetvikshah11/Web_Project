@@ -60,7 +60,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:10px
+  gap:4px
 }
 
 .col2_header {
@@ -286,6 +286,7 @@ table {
   padding: 10px;
   border-radius: 10px;
   font-size: large;
+  margin-top: 8px;
 }
 #upload_pic {
   margin: auto;

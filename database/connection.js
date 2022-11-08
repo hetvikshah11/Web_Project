@@ -116,7 +116,8 @@ module.exports.createSchema = async () => {
 }
 
 module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, Email, Password, Year) => {
-
+  let tdata=await Teacher.find({});
+  
   let data = new Student({
     First_name: First_name,
     Last_name: Last_name,
@@ -127,7 +128,12 @@ module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, 
     Year: Year
   })
   let result = await data.save();
-  console.log(result);
+  for(i in tdata)
+  {
+    let data1 = await Student.updateOne({Email: Email}, { $push: { "Lecture_Attended": { Subject_name: tdata[i].Subject_name, attended: 0 } } });
+    let data2 = await Student.updateOne({Email: Email}, { $push: { "Total_Lecture": { Subject_name:tdata[i].Subject_name, No_of_lec: tdata[i].Lecture_count } } })
+    console.log(result);
+  }
 
 };
 
