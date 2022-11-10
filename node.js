@@ -58,13 +58,9 @@ app.get("/dashboard_s", middleware, async (req, res) => {
 app.get("/dashboard_t", async (req, res) => {
   let data_t = await connection.getData(req.session.user_id);
   let data_s = await connection.getAllStudentData();
-  let material = await connection.getMaterial(
-    await connection.getSubjectName(req.session.user_id)
-  );
+  let material = await connection.getAllMaterial();
   material = JSON.parse(material);
-  let assignment = await connection.getAssignment(
-    await connection.getSubjectName(req.session.user_id)
-  );
+  let assignment = await connection.getAllAssignment();
   assignment = JSON.parse(assignment);
   res.render("dashboard_t", {
     message :req.flash('success'),
@@ -136,6 +132,7 @@ app.post("/login", async (req, res) => {
     // console.log(req.session.user_id);
     let material = await connection.getAllMaterial();
     material = JSON.parse(material);
+    // console.log(material)
     let assignment = await connection.getAllAssignment();
     assignment = JSON.parse(assignment);
     res.render("dashboard_s", {
@@ -156,13 +153,9 @@ app.post("/login", async (req, res) => {
       const result = JSON.parse(await connection.TeacherId(email));
       req.session.user_id = result["_id"];
       // console.log(req.session.user_id);
-      let material = await connection.getMaterial(
-        await connection.getSubjectName(req.session.user_id)
-      );
+      let material = await connection.getAllMaterial();
       material = JSON.parse(material);
-      let assignment = await connection.getAssignment(
-        await connection.getSubjectName(req.session.user_id)
-      );
+      let assignment = await connection.getAllAssignment();
       assignment = JSON.parse(assignment);
       res.redirect("/dashboard_t");
       // res.render("dashboard_t", {

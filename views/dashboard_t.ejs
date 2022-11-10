@@ -49,7 +49,7 @@
             <h1>Welcome Back,</h1>
             <h2 id="welcome">
               <%= data_t2["First_name"] %>
-                <%=data_t2["Last_name"]%>
+              <%=data_t2["Last_name"]%>
             </h2>
           </div>
           <br />
@@ -64,7 +64,6 @@
                 <%= data_t2["Lecture_count"] %>
               </p>
             </div>
-                    
           </div>
           <div id="attendance_content">
             <div style="height:15% ;">
@@ -118,6 +117,7 @@
                   <th>Link</th>
                 </tr>
                 <% for(let i in material) {%>
+                  <% if(material[i].Subject_name===data_t2.Subject_name){ %>
                   <tr>
                     <td>
                       <%=material[i].File_name%>
@@ -127,6 +127,7 @@
                       </a>
                     </td>
                   </tr>
+                  <% } %>
                   <% } %>
               </table>
             </div>
@@ -179,6 +180,7 @@
                   <th>Link</th>
                 </tr>
                 <% for(let i in assignment) {%>
+                  <% if(assignment[i].Subject_name===data_t2.Subject_name){ %>
                   <tr>
                     <td>
                       <%=assignment[i].File_name%>
@@ -187,6 +189,7 @@
                       <a href="<%=assignment[i].URL%>" target="_blank">Open File</a>
                     </td>
                   </tr>
+                  <% } %>
                   <% } %>
               </table>
             </div>

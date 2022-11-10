@@ -335,14 +335,7 @@ module.exports.uploadAssignment = async (subject, link, name) => {
 
 };
 
-module.exports.getMaterial = async (subject) => {
-  let result = await Material.find({ Subject_name: subject });
-  return JSON.stringify(result);
-}
-module.exports.getAssignment = async (subject) => {
-  let result = await Assignment.find({ Subject_name: subject });
-  return JSON.stringify(result);
-}
+
 module.exports.getAllMaterial = async () => {
   let result = await Material.find({});
   return JSON.stringify(result);
