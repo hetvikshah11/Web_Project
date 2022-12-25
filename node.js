@@ -172,14 +172,23 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.post("/settings", async (req, res) => {
+app.post("/settings_t", async (req, res) => {
   const NPass = req.body.NPass;
   const Email = req.body.Email;
   const result = await connection.updatePass(Email,NPass);
+  req.flash('success','Password updated Successfully');
 
+  res.redirect("/dashboard_t")
   // if(EPass)
 })
-
+app.post("/settings_s", async (req, res) => {
+  const NPass = req.body.NPass;
+  const Email = req.body.Email;
+  const result = await connection.updatePass(Email,NPass);
+  req.flash('success','Password updated Successfully');
+  res.redirect("/dashboard_t")
+  // if(EPass)
+})
 
 app.post("/prof_pic", storage.parser.single("img"), async (req, res) => {
   const result = await connection.updateStudentProfPic(

@@ -196,10 +196,10 @@
           </div>
           <div id="settings_content">
             Hello
-            <form action="/settings" method="post">
+            <form action="/settings_t" method="post">
               <h1>Settings</h1>
-              <label for="Email">Existing Password</label>
-              <input type="text" name="Email" id="Email" value="<%=data_t2.Email%>">
+              <label for="Email">Existing email</label>
+              <input type="text" name="Email" id="Email" value="<%=data_t2.Email%>" readonly>
               <br><br>
               <label for="NPass">New Password</label>
               <input type="password" name="NPass" id="NPass">
@@ -252,7 +252,7 @@
   <!-- /////////////////////////////////////////////////////// -->
 
   <script type="text/javascript">
-    var myWidget = cloudinary.createUploadWidget(
+    var myWidget1 = cloudinary.createUploadWidget(
       {
         cloudName: "dedseoasc",
         uploadPreset: "abyxzsh3",
@@ -263,7 +263,7 @@
           console.log(result.info.secure_url);
 
           sendData(result.info.secure_url, result.info.original_filename);
-          alert("Data uploaded succesfully");
+          alert("Assignment uploaded succesfully");
         }
       }
     );
@@ -271,7 +271,7 @@
     document.getElementById("upload_widget2").addEventListener(
       "click",
       function () {
-        myWidget.open();
+        myWidget1.open();
       },
       false
     );
@@ -318,7 +318,7 @@
         console.log(result.info.secure_url);
 
         sendMaterialData(result.info.secure_url, result.info.original_filename);
-        alert("Data uploaded succesfully");
+        alert("Material uploaded succesfully");
       }
     }
   );
