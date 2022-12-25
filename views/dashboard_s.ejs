@@ -61,7 +61,7 @@
       <img id="home_img_s" src="../images/student_home.png" />
       <div id="home_content">
         <h2 class="content_heading">ATTENDANCE</h2>
-        <div class="attendance_content">
+        <div class="attendance_div">
           <table id="display_attendance">
             <tr>
               <th>Subject</th>
@@ -96,6 +96,7 @@
       </div>
       <div id="grades_content">
         <h2>YOUR MARKS</h2>
+        <div class="grades_div">
         <table id="display_marks">
           <tr>
             <th>Subject Name</th>
@@ -116,10 +117,12 @@
             </tr>
             <% } %>
         </table>
+      </div>
                 
       </div>
       <div id="tasks_content">
         <h2>MY TASKS</h2>
+        <div class="tasks_div">
         <table id="tasks_table">
           <tr>
             <th>Subject Name</th>
@@ -139,8 +142,10 @@
             <% } %>
         </table>
       </div>
+    </div>
       <div id="materials_content">
         <h2>REFERENCE MATERIALS</h2>
+        <div class="materials_div">
         <table id="material_table">
           <tr>
             <th>Filename</th>
@@ -155,6 +160,7 @@
             </tr>
             <% } %>
         </table>
+      </div>
       </div>
       <div id="settings_content">
         <form action="/settings" method="post">
