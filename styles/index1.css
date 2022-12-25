@@ -25,7 +25,7 @@ button:hover {
   /* background-color: #d0ebff; */
 
   /* Because we want header to be sticky later */
-  height: 80px;
+  height:100px;
   padding: 0 48px;
   position: relative;
   border-top-left-radius: 10px;
@@ -36,8 +36,9 @@ button:hover {
 }
 
 .header-logo {
-  height: 60px;
-  width: 150px;
+  height: 85px;
+  width: 160px;
+  margin-top:20px;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.37);
 }
@@ -104,12 +105,8 @@ button:hover {
   /* background-attachment: fixed; */
   position: relative;
 }
-/* rgba(0, 0, 0, 0.85)
-rgba(0, 0, 0, 0.45) */
 .s_img_header {
   color: #22b8cf;
-  /* letter-spacing: 2px;
-  word-spacing: 10px; */
   margin: 0;
   width: 30%;
   line-height: 1.4;
@@ -148,9 +145,6 @@ rgba(0, 0, 0, 0.45) */
   width: 60%;
   border-radius: 20px;
   font-weight: 400;
-  /* background-color: black; */
-  /* overflow: auto;
-  height: 200px; */
 }
 .f_img {
   width: 100%;
@@ -159,6 +153,10 @@ rgba(0, 0, 0, 0.45) */
   border-top-right-radius: 20px;
 }
 .f_content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: justify;
   height: 150px;
   padding: 10px 20px;
   margin: 0;
@@ -168,10 +166,6 @@ rgba(0, 0, 0, 0.45) */
   border-radius: 20px;
   background-color: whitesmoke;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.267);
-  /* background-color: #ff595e; */
-  /* border-bottom-left-radius: 20px; */
-  /* border-bottom-right-radius: 20px; */
-  /* color: white; */
 }
 
 /******************************/
