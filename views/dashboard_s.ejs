@@ -1,65 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles/dashboard_s.css" />
-    <link rel="stylesheet" href="../styles/loader.css">
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/dashboard_s.css" />
+  <link rel="stylesheet" href="../styles/loader.css">
 
-  <body>
-    <div class="outer">
-      <div class="col1">
-        <img src="./images/logo.jpeg" id="logo" />
-        <div class="menu_items">
-          <h2>MENU</h2>
-          <div onclick="menu_item()" id="home" class="active">
-            <ion-icon class="main-nav-icon" name="home-outline"></ion-icon>
-            Home
-          </div>
-          <div onclick="menu_item()" id="courses">
-            <ion-icon class="main-nav-icon" name="grid-outline"></ion-icon>
-            Courses
-          </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
 
-          <div onclick="menu_item()" id="grades">
-            <ion-icon class="main-nav-icon" name="checkbox-outline"></ion-icon>
-            Grades
-          </div>
+<body>
+  <div class="outer">
+    <div class="col1">
+      <img src="./images/logo.jpeg" id="logo" />
+      <div class="menu_items">
+        <h2>MENU</h2>
+        <div onclick="menu_item()" id="home" class="active">
+          <ion-icon class="main-nav-icon" name="home-outline"></ion-icon>
+          Home
+        </div>
+        <div onclick="menu_item()" id="courses">
+          <ion-icon class="main-nav-icon" name="grid-outline"></ion-icon>
+          Courses
+        </div>
 
-          <div onclick="menu_item()" id="tasks">
-            <ion-icon class="main-nav-icon" name="easel-outline"></ion-icon>
-            My Tasks
-          </div>
+        <div onclick="menu_item()" id="grades">
+          <ion-icon class="main-nav-icon" name="checkbox-outline"></ion-icon>
+          Grades
+        </div>
 
-          <div onclick="menu_item()" id="materials">
-            <ion-icon class="main-nav-icon" name="calendar-outline"></ion-icon>
-            Materials
-          </div>
+        <div onclick="menu_item()" id="tasks">
+          <ion-icon class="main-nav-icon" name="easel-outline"></ion-icon>
+          My Tasks
+        </div>
 
-          <div onclick="menu_item()" id="settings">
-            <ion-icon class="main-nav-icon" name="settings-outline"></ion-icon>
-            Settings
-          </div>
+        <div onclick="menu_item()" id="materials">
+          <ion-icon class="main-nav-icon" name="calendar-outline"></ion-icon>
+          Materials
+        </div>
+
+        <div onclick="menu_item()" id="settings">
+          <ion-icon class="main-nav-icon" name="settings-outline"></ion-icon>
+          Settings
         </div>
       </div>
+    </div>
 
-      <div class="col2">
-        <div class="col2_header">
-          <h1>Welcome Back,</h1>
-        <h2 id="welcome"><%= data_s2["First_name"] %>  <%=data_s2["Last_name"]%> </h2>
+    <div class="col2">
+      <div class="col2_header">
+        <h1>Welcome Back,</h1>
+        <h2 id="welcome">
+          <%= data_s2["First_name"] %>
+            <%=data_s2["Last_name"]%>
+        </h2>
       </div>
-        <br />
-         <img id="home_img_s" src="../images/student_home.png"/>
-        <div id="home_content">
-          <h2 class="content_heading">ATTENDANCE</h2>
+      <br />
+      <img id="home_img_s" src="../images/student_home.png" />
+      <div id="home_content">
+        <h2 class="content_heading">ATTENDANCE</h2>
+        <div class="attendance_content">
           <table id="display_attendance">
             <tr>
               <th>Subject</th>
@@ -68,89 +70,109 @@
             </tr>
             <% for(let data in data_s2["Lecture_Attended"]) {%>
               <tr>
-                <td><%=data_s2["Lecture_Attended"][data]["Subject_name"]%></td>
-                <td><%=data_s2["Lecture_Attended"][data]["attended"]%></td>
-                <td><%=data_s2["Total_Lecture"][data]["No_of_lec"]%></td>
+                <td>
+                  <%=data_s2["Lecture_Attended"][data]["Subject_name"]%>
+                </td>
+                <td>
+                  <%=data_s2["Lecture_Attended"][data]["attended"]%>
+                </td>
+                <td>
+                  <%=data_s2["Total_Lecture"][data]["No_of_lec"]%>
+                </td>
               </tr>
-            <% } %>
+              <% } %>
           </table>
         </div>
-        <div id="courses_content">
-          <h2>ENROLLED SUBJECTS</h2>
-          <ul class="courses_list">
+      </div>
+      <div id="courses_content">
+        <h2>ENROLLED SUBJECTS</h2>
+        <ul class="courses_list">
           <% for(let data in data_s2["Lecture_Attended"]) {%>
-            <li class="courses_enrolled"><%= data_s2["Lecture_Attended"][data]["Subject_name"]%></li>
-          <% } %>
-        </ul>
-        </div>
-        <div id="grades_content">
-          <h2>YOUR MARKS</h2>
-          <table id="display_marks">
-            <tr>
-              <th>Subject Name</th>
-              <th>Marks(out of 100)</th>
-              <th>Date/Time</th>
-            </tr>
-            <% for(let data in data_s2["Marks"]) {%>
-              <tr>
-                <td><%=data_s2["Marks"][data]["Subject_name"]%></td>
-                <td><%=data_s2["Marks"][data]["Marks"]%></td>
-                <td><%=data_s2["Marks"][data]["Date"]%></td>
-              </tr>
+            <li class="courses_enrolled">
+              <%= data_s2["Lecture_Attended"][data]["Subject_name"]%>
+            </li>
             <% } %>
-          </table>
-        </div>
-        <div id="tasks_content">
-          <h2>MY TASKS</h2>
-          <table id="tasks_table">
-           <tr>
+        </ul>
+      </div>
+      <div id="grades_content">
+        <h2>YOUR MARKS</h2>
+        <table id="display_marks">
+          <tr>
+            <th>Subject Name</th>
+            <th>Marks(out of 100)</th>
+            <th>Date/Time</th>
+          </tr>
+          <% for(let data in data_s2["Marks"]) {%>
+            <tr>
+              <td>
+                <%=data_s2["Marks"][data]["Subject_name"]%>
+              </td>
+              <td>
+                <%=data_s2["Marks"][data]["Marks"]%>
+              </td>
+              <td>
+                <%=data_s2["Marks"][data]["Date"]%>
+              </td>
+            </tr>
+            <% } %>
+        </table>
+                
+      </div>
+      <div id="tasks_content">
+        <h2>MY TASKS</h2>
+        <table id="tasks_table">
+          <tr>
             <th>Subject Name</th>
             <th>File Name</th>
             <th>Link</th>
           </tr>
           <% for(let data in assignment) {%>
-          <tr>
-            <td><%=assignment[data]["Subject_name"]%></td>
-            <td><%=assignment[data]["File_name"]%></td>
-            <td><a target="_blank" href="<%=assignment[data]["URL"]%>">Open File</a></td>
-          </tr>
-          <% } %>
-        </table>
-      </div>
-        <div id="materials_content">
-          <h2>REFERENCE MATERIALS</h2>
-          <table id="material_table">
             <tr>
-                <th>Filename</th>
-                <th>Link</th>
+              <td>
+                <%=assignment[data]["Subject_name"]%>
+              </td>
+              <td>
+                <%=assignment[data]["File_name"]%>
+              </td>
+              <td><a target="_blank" href="<%=assignment[data][" URL"]%>">Open File</a></td>
             </tr>
-            <% for(let i in material) {%>
-                <tr>
-                    <td >
-                        <%=material[i].File_name%>
-                    </td>
-                      <td><a href="<%=material[i].URL%>" target="_blank">Open File</a> </td>
-                </tr>
-                <% } %>
+            <% } %>
         </table>
-        </div>
-        <div id="settings_content">
-          <form action="/settings" method="post">
-            <h1>Settings</h1>
-            <label for="Email">Existing Password</label>
-            <input type="text" name="Email" id="Email" value="<%=data_s2.Email%>">
-            <br><br>
-            <label for="NPass">New Password</label>
-            <input type="password" name="NPass" id="NPass">
-            <br><br>
-            <button type="submit">Save Changes</button>
-          </form>
-        </div>
       </div>
+      <div id="materials_content">
+        <h2>REFERENCE MATERIALS</h2>
+        <table id="material_table">
+          <tr>
+            <th>Filename</th>
+            <th>Link</th>
+          </tr>
+          <% for(let i in material) {%>
+            <tr>
+              <td>
+                <%=material[i].File_name%>
+              </td>
+              <td><a href="<%=material[i].URL%>" target="_blank">Open File</a> </td>
+            </tr>
+            <% } %>
+        </table>
+      </div>
+      <div id="settings_content">
+        <form action="/settings" method="post">
+          <h1>Settings</h1>
+          <label for="Email">Existing Password</label>
+          <input type="text" name="Email" id="Email" value="<%=data_s2.Email%>">
+          <br><br>
+          <label for="NPass">New Password</label>
+          <input type="password" name="NPass" id="NPass">
+          <br><br>
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+    </div>
 
-      <div class="col3">
-        <div class="col3_content">
-        <div  style="width: 100%">
+    <div class="col3">
+      <div class="col3_content">
+        <div style="width: 100%">
           <form action="/logout" method="post">
             <button id="student_logout" type="submit">logout</button>
           </form>
@@ -160,16 +182,19 @@
           <div id="dp">
             <img src="" alt="abc" id="profilepic" />
             <div id="blackfill">
-              <input type="file" id="filechooser" accept=".jpg,.jpeg,.png"
-              name="img" value="<%=data_s[" Img_url"]%>"/>
+              <input type="file" id="filechooser" accept=".jpg,.jpeg,.png" name="img" value="<%=data_s[" Img_url"]%>"/>
             </div>
           </div>
 
           <button type="submit" id="upload_pic">Upload</button>
         </form>
         <br /><br />
-        <h2><%=data_s2.First_name%> <%=data_s2.Last_name%></h2>
-        <h3>D.O.B :- <%=data_s2.Birth_date%></h3>
+        <h2>
+          <%=data_s2.First_name%>
+            <%=data_s2.Last_name%>
+        </h2>
+        <h3>D.O.B :- <%=data_s2.Birth_date%>
+        </h3>
         <h3>
           <%=data_s2.Year%>
         </h3>
@@ -178,23 +203,26 @@
         <br /><br /><br />
         <h2>Messages</h2> -->
       </div>
-      </div>
     </div>
+  </div>
 
-    <div class="loader"></div>
+  <div class="loader"></div>
 
-    <p id="received_data" style="display: none"><%= data_s %></p>
-    <script src="../js/dashboard_s.js"></script>
-    <script>
-      window.addEventListener("load", () => {
-          const loader = document.querySelector(".loader");
+  <p id="received_data" style="display: none">
+    <%= data_s %>
+  </p>
+  <script src="../js/dashboard_s.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.querySelector(".loader");
 
-          loader.classList.add("loader--hidden");
+      loader.classList.add("loader--hidden");
 
-          loader.addEventListener("transitionend", () => {
-              document.body.removeChild(loader);
-          });
+      loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
       });
+    });
   </script>
-  </body>
+</body>
+
 </html>
