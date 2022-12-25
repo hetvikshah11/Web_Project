@@ -112,7 +112,7 @@ app.post("/register", async (req, res) => {
       );
       await connection.addSubject(Subject, Lectures);
     }
-    res.send("Success");
+    res.redirect("/");
   } else {
     res.send("User already exists");
   }

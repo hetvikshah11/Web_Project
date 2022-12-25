@@ -131,7 +131,7 @@ module.exports.insertStudent = async (First_name, Last_name, Birth_date, Phone, 
   for(i in tdata)
   {
     let data1 = await Student.updateOne({Email: Email}, { $push: { "Lecture_Attended": { Subject_name: tdata[i].Subject_name, attended: 0 } } });
-    let data2 = await Student.updateOne({Email: Email}, { $push: { "Total_Lecture": { Subject_name:tdata[i].Subject_name, No_of_lec: tdata[i].Lecture_count } } })
+    let data2 = await Student.updateOne({Email: Email}, { $push: { "Total_Lecture": { Subject_name:tdata[i].Subject_name, No_of_lec: tdata[i].Lecture_Conducted } } })
     console.log(result);
   }
 
@@ -273,7 +273,7 @@ module.exports.updateTeacherProfPic = async (id, filepath) => {
 module.exports.addSubject = async (Subject, count) => {
   console.log(count);
   let data1 = await Student.updateMany({}, { $push: { "Lecture_Attended": { Subject_name: Subject, attended: 0 } } });
-  let data2 = await Student.updateMany({}, { $push: { "Total_Lecture": { Subject_name: Subject, No_of_lec: count } } })
+  let data2 = await Student.updateMany({}, { $push: { "Total_Lecture": { Subject_name: Subject, No_of_lec: 0 } } })
 
 }
 module.exports.getSubjectName = async (id) => {
