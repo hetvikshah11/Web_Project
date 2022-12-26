@@ -181,6 +181,22 @@ body {
   border-collapse: collapse;
   text-align: center;
 }
+#upload_pic:hover ,#setting_btn:hover{
+  background-color: #2e9bb1;
+  cursor: pointer;
+}
+#upload_pic,#setting_btn {
+  width: 60%;
+  border: 0;
+  background-color: #00b4d8;
+  /* background-color: #ff960d; */
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: large;
+  margin: auto;
+  margin-top: 8px;
+}
 #display_attendance tr:nth-child(even),
 #display_marks tr:nth-child(even),
 #tasks_table tr:nth-child(even),
